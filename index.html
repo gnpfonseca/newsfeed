@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no"  />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>iPhone... testing</title>
+        <link rel="stylesheet" href="app.css"/>
+
+    </head>
+    <body>
+        
+		<script type="text/plain" id="t1">
+            <div class="box">
+            <a href="" rel="noreferrer" target="_blank" ><img src=""/></a>
+            <div class="caption full-caption">
+            <h6> </h6>
+            <h2> </h2>
+            <p> </p>
+            </div>
+                <div class="text_box"></div>
+            </div>            
+        </script>
+		
+        <div id="bar">
+            <div id="done"></div>
+        </div>
+		
+        <nav>
+            <ul class="icon">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="menu">
+              <li><div style="background-color: #fdfdfd;"></div>Internacional</li>
+                <li><div style="background-color: #5856D6;"></div>Cultura</li>
+                <li><div style="background-color: #34AADC;"></div>Ciências</li>                
+                <li><div style="background-color: #0BD318;"></div>Tecnologia</li>    
+                <li><div style="background-color: #FFCC00;"></div>Desporto</li>
+                <li><div style="background-color: #FF9500"></div>Economia</li>
+                <li><div style="background-color: #FF3A2D;"></div>Política</li>
+                <li><div style="background-color: #8E8E93;"></div>Geral</li>                
+            </ul>
+        </nav>
+		
+        <div id="loginbox" class="loginwrapper" style="display: none;">
+            <div class="box">
+                <form action="#" method="GET" accept-charset="UTF-8" id="loginform" name="loginform">
+                    <input type="text" name="user" id="username" placeholder="username" value="" /><br>
+                    <input type="password" name="pass" id="pass" placeholder="password" value="" />
+                    <button id="trigger" type="button" class="button">login</button> 
+                </form>
+            </div>
+        </div>
+		
+        <div id="timemachine" class="timemachinewrapper">
+            <form action="#" method="GET" accept-charset="UTF-8" id="timemachineform" name="timemachineform">
+                <label>Regressar ao dia: <input type="date" name="data" id="data"/></label>
+            </form>
+        </div>
+		
+        <div id="mainwrapper" class="mainwrapper"></div>
+		
+        <script type="text/javascript" src="libs.js"></script> <!-- jQuery e jQuery.swipe -->
+		<script type="text/javascript" src="app.js"></script>  <!-- News -->
+    </body>
+</html>
