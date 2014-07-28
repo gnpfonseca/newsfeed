@@ -1,0 +1,13 @@
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+url: "http://localhost:4000/"
+description: "stuffs about things"
+
+exclude: ['Gruntfile.js','assets/sass','package.json','README','.gitignore','node_modules']
+
+css: ['./assets/css/app.css']
+js: []
+img: []
+
+
