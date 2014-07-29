@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* line 1, ../sass/app.scss */
 0.mainwrapper .loginwrapper {
   font-family: Calibri,Helvetica,Arial,sans-serif;
   font-size: .9em;
@@ -11,12 +10,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 12, ../sass/app.scss */
 .loginwrapper {
   margin-top: 0;
 }
 
-/* line 17, ../sass/app.scss */
 .loginwrapper .box input {
   width: 300px;
   margin: 10px;
@@ -25,7 +22,6 @@
   border-radius: 0;
 }
 
-/* line 26, ../sass/app.scss */
 .mainwrapper .box, .loginwrapper .box {
   background-color: #FDFDFD;
   border: 5px solid #FDFDFD;
@@ -39,14 +35,12 @@
   width: 450px;
 }
 
-/* line 39, ../sass/app.scss */
 .mainwrapper .box img {
   left: 0;
   position: absolute;
   transition: all 300ms ease-out 0;
 }
 
-/* line 45, ../sass/app.scss */
 .mainwrapper .box .caption {
   background-color: transparent;
   color: #000;
@@ -56,7 +50,6 @@
   z-index: 100;
 }
 
-/* line 54, ../sass/app.scss */
 .mainwrapper .box .simple-caption {
   bottom: -30px;
   display: block;
@@ -66,7 +59,6 @@
   width: 200px;
 }
 
-/* line 63, ../sass/app.scss */
 .mainwrapper .box .full-caption {
   height: 172px;
   left: 200px;
@@ -76,7 +68,6 @@
   width: 240px;
 }
 
-/* line 72, ../sass/app.scss */
 .mainwrapper .box .fade-caption, .mainwrapper .box .scale-caption {
   height: 170px;
   opacity: 0;
@@ -85,7 +76,6 @@
   width: 170px;
 }
 
-/* line 80, ../sass/app.scss */
 .mainwrapper .box .slide-caption {
   height: 170px;
   left: 220px;
@@ -94,7 +84,6 @@
   width: 170px;
 }
 
-/* line 88, ../sass/app.scss */
 .mainwrapper #box-5.box .rotate-caption, .mainwrapper .box-x .rotate-caption {
   height: 170px;
   padding: 15px;
@@ -104,14 +93,12 @@
   width: 170px;
 }
 
-/* line 97, ../sass/app.scss */
 .mainwrapper .box .rotate {
   height: 400px;
   transition: all 300ms ease-out 0;
   width: 200px;
 }
 
-/* line 103, ../sass/app.scss */
 .mainwrapper .box .scale-caption h3, .mainwrapper .box .scale-caption p {
   left: -200px;
   position: relative;
@@ -119,62 +106,51 @@
   width: 170px;
 }
 
-/* line 110, ../sass/app.scss */
 .mainwrapper .box .scale-caption h3 {
   transition-delay: 300ms;
 }
 
-/* line 114, ../sass/app.scss */
 .mainwrapper .box .scale-caption p {
   transition-delay: 500ms;
 }
 
-/* line 118, ../sass/app.scss */
 .mainwrapper .box:hover .simple-caption {
   opacity: 1;
   transform: translateY(-100%);
 }
 
-/* line 123, ../sass/app.scss */
 .mainwrapper .box:hover .fade-caption, .mainwrapper .box:hover .scale-caption {
   opacity: 1;
 }
 
-/* line 127, ../sass/app.scss */
 .mainwrapper .box:hover .slide-caption {
   background-color: black !important;
   opacity: 1;
   transform: translateX(-100%);
 }
 
-/* line 133, ../sass/app.scss */
 .mainwrapper .box:hover img#image-4 {
   opacity: 1;
   transform: translateX(-100%);
 }
 
-/* line 138, ../sass/app.scss */
 .mainwrapper .box:hover .rotate {
   background-color: black !important;
   transform: rotate(-180deg);
 }
 
-/* line 143, ../sass/app.scss */
 .mainwrapper .box:hover #image-6 {
   transform: scale(1.4);
 }
 
-/* line 147, ../sass/app.scss */
 .mainwrapper .box:hover .scale-caption h3, .mainwrapper .box:hover .scale-caption p {
   transform: translateX(200px);
 }
 
-/* line 151, ../sass/app.scss */
 .template {
   display: none;
 }
 
-/* line 155, ../sass/app.scss */
 .full-caption p a:link {
   color: #000;
   left: 228px;
@@ -183,13 +159,11 @@
   top: 158px;
 }
 
-/* line 163, ../sass/app.scss */
 .full-caption p a:hover, .full-caption p a:visited {
   color: #000;
   text-decoration: none;
 }
 
-/* line 168, ../sass/app.scss */
 .full-caption p a span {
   background-color: #F2F2F2;
   font-size: 15px;
@@ -203,7 +177,6 @@
   src: url(font/fontawesome-webfont.eot?#iefix) format("embedded-opentype"), url(font/fontawesome-webfont.woff) format("woff"), url(font/fontawesome-webfont.ttf) format("truetype"), url(../font/fontawesome-webfont.svg#FontAwesome) format("svg");
 }
 
-/* line 178, ../sass/app.scss */
 [class*=" icon-"]:before, [class^=icon-]:before {
   display: inline-block;
   font-family: FontAwesome;
@@ -212,26 +185,22 @@
   text-decoration: inherit;
 }
 
-/* line 186, ../sass/app.scss */
 a [class*=" icon-"], a [class^=icon-] {
   display: inline-block;
   text-decoration: inherit;
 }
 
-/* line 191, ../sass/app.scss */
 .icon-external-link:before {
   color: #F2F2F2;
   content: "ï‚Ž";
 }
 
-/* line 196, ../sass/app.scss */
 #done {
   background: none repeat scroll 0 0 #8E8E93;
   height: 4px;
   width: 1%;
 }
 
-/* line 202, ../sass/app.scss */
 #bar {
   background: none repeat scroll 0 0 #8E8E93;
   height: 4px;
@@ -242,7 +211,6 @@ a [class*=" icon-"], a [class^=icon-] {
   overflow-y: hidden;
 }
 
-/* line 212, ../sass/app.scss */
 .caption h2 {
   color: #191919;
   font-weight: 400;
@@ -250,7 +218,6 @@ a [class*=" icon-"], a [class^=icon-] {
   margin: 2px 5px 4px;
 }
 
-/* line 219, ../sass/app.scss */
 .caption h6 {
   color: #7D7D7D;
   font-size: smaller;
@@ -261,59 +228,49 @@ a [class*=" icon-"], a [class^=icon-] {
   top: 0;
 }
 
-/* line 229, ../sass/app.scss */
 .caption p {
   color: #4D4D4D;
   margin-left: 4px;
   margin-top: 13px;
 }
 
-/* line 235, ../sass/app.scss */
 #timemachine {
   display: none;
 }
 
 @media screen and (max-width: 1024px) {
-  /* line 240, ../sass/app.scss */
   .mainwrapper {
     width: 1024px;
   }
 
-  /* line 244, ../sass/app.scss */
   .mainwrapper .box, .loginwrapper .box {
     width: 490px;
   }
 
-  /* line 248, ../sass/app.scss */
   .mainwrapper .box .full-caption {
     width: 280px;
     font-size: 90%;
   }
 
-  /* line 253, ../sass/app.scss */
   full-caption p {
     line-height: 18px;
   }
 
-  /* line 257, ../sass/app.scss */
   .full-caption p a:link {
     top: 155px;
     left: 260px;
     font-size: 140%;
   }
 
-  /* line 263, ../sass/app.scss */
   #timemachine {
     display: none !important;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 269, ../sass/app.scss */
   .mainwrapper {
     width: 768px;
   }
 
-  /* line 273, ../sass/app.scss */
   .mainwrapper .box, .loginwrapper .box {
     border: 4px solid #fff;
     height: 182px;
@@ -321,7 +278,6 @@ a [class*=" icon-"], a [class^=icon-] {
     width: 365px;
   }
 
-  /* line 280, ../sass/app.scss */
   .mainwrapper .box .full-caption {
     left: 140px;
     width: 215px;
@@ -330,126 +286,105 @@ a [class*=" icon-"], a [class^=icon-] {
     font-size: 85%;
   }
 
-  /* line 288, ../sass/app.scss */
   .loginwrapper .box input {
     width: 200px;
     margin: 10px;
     height: 20px;
   }
 
-  /* line 294, ../sass/app.scss */
   .full-caption p a:link {
     top: 155px;
     left: 200px;
     font-size: 140%;
   }
 
-  /* line 300, ../sass/app.scss */
   .mainwrapper .box img {
     left: -60px;
   }
 
-  /* line 304, ../sass/app.scss */
   #timemachine {
     display: none !important;
   }
 }
 @media screen and (max-width: 568px) {
-  /* line 310, ../sass/app.scss */
   .mainwrapper {
     width: 480px;
   }
 
-  /* line 314, ../sass/app.scss */
   .mainwrapper .box, .loginwrapper .box {
     width: 460px;
   }
 
-  /* line 318, ../sass/app.scss */
   .mainwrapper .box .full-caption {
     left: 200px;
     width: 250px;
     font-size: 90%;
   }
 
-  /* line 324, ../sass/app.scss */
   .loginwrapper .box input {
     width: 190px;
     margin: 10px;
     height: 25px;
   }
 
-  /* line 330, ../sass/app.scss */
   full-caption p {
     line-height: 18px;
   }
 
-  /* line 334, ../sass/app.scss */
   .full-caption p a:link {
     top: 155px;
     left: 240px;
     font-size: 140%;
   }
 
-  /* line 340, ../sass/app.scss */
   .mainwrapper .box img {
     left: 0;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 346, ../sass/app.scss */
   .mainwrapper {
     width: 480px;
   }
 
-  /* line 350, ../sass/app.scss */
   .mainwrapper .box, .loginwrapper .box {
     width: 460px;
   }
 
-  /* line 354, ../sass/app.scss */
   .mainwrapper .box .full-caption {
     left: 200px;
     width: 250px;
     font-size: 90%;
   }
 
-  /* line 360, ../sass/app.scss */
   .loginwrapper .box input {
     width: 190px;
     margin: 10px;
     height: 25px;
   }
 
-  /* line 366, ../sass/app.scss */
   full-caption p {
     line-height: 18px;
   }
 
-  /* line 370, ../sass/app.scss */
   .full-caption p a:link {
     top: 155px;
     left: 240px;
     font-size: 140%;
   }
 
-  /* line 376, ../sass/app.scss */
   .mainwrapper .box img {
     left: 0;
   }
 
-  /* line 380, ../sass/app.scss */
   #timemachine {
     display: none !important;
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 386, ../sass/app.scss */
   .mainwrapper, .loginwrapper {
     width: 320px;
   }
 
-  /* line 390, ../sass/app.scss */
   .mainwrapper .box, .loginwrapper .box {
     border: 4px solid #fff;
     height: 182px;
@@ -457,13 +392,11 @@ a [class*=" icon-"], a [class^=icon-] {
     width: 305px;
   }
 
-  /* line 397, ../sass/app.scss */
   .loginwrapper {
     top: 30px;
     position: relative;
   }
 
-  /* line 402, ../sass/app.scss */
   .mainwrapper .box .full-caption {
     left: 120px;
     width: 175px;
@@ -472,7 +405,6 @@ a [class*=" icon-"], a [class^=icon-] {
     font-size: 85%;
   }
 
-  /* line 410, ../sass/app.scss */
   .loginwrapper .box input {
     width: 190px;
     margin: 10px;
@@ -484,19 +416,16 @@ a [class*=" icon-"], a [class^=icon-] {
     font-size: 13px;
   }
 
-  /* line 421, ../sass/app.scss */
   .full-caption p a:link {
     top: 155px;
     left: 140px;
     font-size: 140%;
   }
 
-  /* line 427, ../sass/app.scss */
   .mainwrapper .box img {
     left: -80px;
   }
 
-  /* line 431, ../sass/app.scss */
   .timemachinewrapper {
     font-family: Calibri,Helvetica,Arial,sans-serif;
     font-size: 1em;
@@ -504,12 +433,10 @@ a [class*=" icon-"], a [class^=icon-] {
     height: 60px !important;
   }
 
-  /* line 438, ../sass/app.scss */
   #timemachine {
     display: block !important;
   }
 }
-/* line 443, ../sass/app.scss */
 .preference {
   margin-top: 5px;
   width: 194px;
@@ -519,7 +446,6 @@ a [class*=" icon-"], a [class^=icon-] {
   float: left;
 }
 
-/* line 452, ../sass/app.scss */
 .preference div {
   width: 60px;
   height: 60px;
@@ -534,37 +460,31 @@ a [class*=" icon-"], a [class^=icon-] {
   margin-top: 60px;
 }
 
-/* line 466, ../sass/app.scss */
 .preference div:first-child {
   margin-left: 25px;
 }
 
-/* line 470, ../sass/app.scss */
 .iLikeClicked {
   background-color: #4cd964 !important;
   border: 1px #4cd964 solid !important;
   color: white !important;
 }
 
-/* line 476, ../sass/app.scss */
 .iHateClicked {
   background-color: #ff3b30 !important;
   border: 1px #ff3b30 solid !important;
 }
 
-/* line 481, ../sass/app.scss */
 #iLike {
   background-color: #FFF;
   color: #5A5A5A;
 }
 
-/* line 486, ../sass/app.scss */
 #iHate {
   background-color: #9A9A9A;
   color: #FFF;
 }
 
-/* line 491, ../sass/app.scss */
 .button {
   width: 200px;
   padding: 16px;
@@ -578,7 +498,6 @@ a [class*=" icon-"], a [class^=icon-] {
   cursor: pointer;
 }
 
-/* line 504, ../sass/app.scss */
 .timemachinewrapper {
   font-family: Calibri,Helvetica,Arial,sans-serif;
   font-size: 1em;
@@ -586,17 +505,14 @@ a [class*=" icon-"], a [class^=icon-] {
   height: 60px;
 }
 
-/* line 511, ../sass/app.scss */
 .vn {
   background-color: #ffcbbf !important;
 }
 
-/* line 515, ../sass/app.scss */
 .vp {
   background-color: #b0fec8 !important;
 }
 
-/* line 519, ../sass/app.scss */
 #timemachine {
   float: left;
   width: 320px;
@@ -606,7 +522,6 @@ a [class*=" icon-"], a [class^=icon-] {
   position: relative;
 }
 
-/* line 528, ../sass/app.scss */
 #timemachine label {
   color: #939393;
   height: 50px;
@@ -614,13 +529,11 @@ a [class*=" icon-"], a [class^=icon-] {
   padding: 10px;
 }
 
-/* line 535, ../sass/app.scss */
 #timemachine input {
   top: -20px;
   color: #939393;
 }
 
-/* line 540, ../sass/app.scss */
 nav {
   width: 100%;
   background-color: #8E8E93;
@@ -635,7 +548,6 @@ nav {
   transition: opacity .4s ease-in-out;
 }
 
-/* line 554, ../sass/app.scss */
 nav ul.icon {
   color: #fff;
   margin: 0;
@@ -649,7 +561,6 @@ nav ul.icon {
   cursor: pointer;
 }
 
-/* line 567, ../sass/app.scss */
 nav > ul.icon > li {
   background-color: #000;
   margin-bottom: 8px;
@@ -659,7 +570,6 @@ nav > ul.icon > li {
   display: block;
 }
 
-/* line 576, ../sass/app.scss */
 nav > ul.menu {
   margin: 0;
   width: 100%;
@@ -674,7 +584,6 @@ nav > ul.menu {
   transition: opacity .4s ease-in-out;
 }
 
-/* line 590, ../sass/app.scss */
 nav > ul.menu > li {
   margin: 0;
   width: 100%;
@@ -688,23 +597,19 @@ nav > ul.menu > li {
   font-size: 1.2em;
 }
 
-/* line 603, ../sass/app.scss */
 nav.open {
   opacity: 1;
   background-color: #3f3f3f;
 }
 
-/* line 608, ../sass/app.scss */
 nav.open ul.icon {
   background-color: #3f3f3f;
 }
 
-/* line 612, ../sass/app.scss */
 nav.open > ul.icon > li {
   background-color: #fdfdfd;
 }
 
-/* line 616, ../sass/app.scss */
 nav.open > ul.menu {
   display: block;
   opacity: .85;
@@ -712,7 +617,6 @@ nav.open > ul.menu {
   z-index: 1000;
 }
 
-/* line 623, ../sass/app.scss */
 .menu li div {
   width: 34px;
   height: 34px;
@@ -725,12 +629,10 @@ nav.open > ul.menu {
   margin-right: 30px;
 }
 
-/* line 635, ../sass/app.scss */
 div.open {
   height: 384px !important;
 }
 
-/* line 639, ../sass/app.scss */
 div.open div.text_box {
   height: 384px !important;
   position: absolute;
