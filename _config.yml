@@ -4,7 +4,7 @@ email: your-email@domain.com
 url: "http://localhost:4000/"
 description: "stuffs about things"
 
-exclude: ['Gruntfile.js','assets/sass','package.json','README','.gitignore','node_modules']
+exclude: ['Gruntfile.js','sass','package.json','README','.gitignore','node_modules']
 
 css: ['./assets/css/app.css','.assets/css/ink.css']
 js: ['./assets/js/libs.js','./assets/js/app.js']
