@@ -1,5 +1,5 @@
 {
-  "name": "sapo-why",
+  "name": "newsfeed",
   "version": "0.0.0",
   "description": "stuffs",
   "main": "Gruntfile.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.gitlab.intra.sapo.pt:pcorreia/sapo-why.git"
+    "url": "git@github.com:gnpfonseca/newsfeed.git"
   },
   "author": "",
   "license": "MIT",
