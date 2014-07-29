@@ -69,10 +69,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-text-replace');
 
     grunt.registerTask('css', ['clean:css','compass','copy','clean:csscontrib','cssmin']);
-    grunt.registerTask('animate', ['replace']);
     grunt.registerTask('default', ['watch']);
 
 };
