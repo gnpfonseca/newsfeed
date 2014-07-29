@@ -7,7 +7,7 @@
  * @author    Sapo Ink Team
  * @license   http://opensource.org/licenses/MIT MIT
  * @link      http://ink.sapo.pt
- * @version   3.0.0
+ * @version   3.0.5
  */
 
 // Import Compass Core
@@ -34,36 +34,36 @@
 @import "config/js";
 
 // IMPORT MIXINS FILES (THESE CONTAIN HELPER FUNCTIONS)
-// @import "functions/_js-bridge.scss";
+@import "functions/_js-bridge.scss";
 @import "mixins/alerts";
 @import "mixins/buttons";
-@import "mixins/grid";
-// @import "mixins/forms";
-// @import "mixins/nav.pills";
-// @import "mixins/nav.breadcrumbs";
-// @import "mixins/nav.pagination";
-// @import "mixins/nav.menu";
-// @import "mixins/nav.dropdown";
-// @import "mixins/themeing";
+@import "mixins/flex-grid";
+@import "mixins/forms";
+@import "mixins/nav.pills";
+@import "mixins/nav.breadcrumbs";
+@import "mixins/nav.pagination"; 
+@import "mixins/nav.menu";
+@import "mixins/nav.dropdown";
+@import "mixins/themeing";
 @import "mixins/typography";
-@import "mixins/utils";
+@import "mixins/flex-utils";
 
 // IMPORT MODULE DEFINITION FILES
 @import "modules/normalize";
 @import "modules/alerts";
-// @import "modules/badges";
+@import "modules/badges";
 @import "modules/buttons";
+@import "modules/flex-forms";
+@import "modules/flex-grid";
 @import "modules/fonts";
-// @import "modules/forms";
-// @import "modules/grid";
-// @import "modules/labels";
-// @import "modules/nav.core";
-// @import "modules/nav.breadcrumbs";
-// @import "modules/nav.dropdown";
-// @import "modules/nav.pagination";
-// @import "modules/nav.pills";
-// @import "modules/nav.menu";
-// @import "modules/tables";
+@import "modules/labels";
+@import "modules/nav.core";
+@import "modules/nav.breadcrumbs";
+@import "modules/nav.dropdown";
+@import "modules/nav.pagination";
+@import "modules/nav.pills";
+@import "modules/nav.menu";
+@import "modules/tables";
 @import "modules/typography";
 @import "modules/images";
 
@@ -80,16 +80,16 @@
 @import "themes/tables";
 
 // IMPORT JS COMPONENTS STYLING
-// @import "modules/js/animate";
-// @import "modules/js/carousel";
-// @import "modules/js/datepicker";
-// @import "modules/js/drawer";
-// @import "modules/js/modal";
-// @import "modules/js/progressbar";
-// @import "modules/js/sortable.list";
-// @import "modules/js/sticky";
-// @import "modules/js/tabs";
-// @import "modules/js/tagfield";
-// @import "modules/js/tooltips";
-// @import "modules/js/treeview";
-
+@import "modules/js/animate";
+@import "modules/js/carousel";
+@import "modules/js/flex-carousel";
+@import "modules/js/datepicker";
+@import "modules/js/drawer";
+@import "modules/js/modal";
+@import "modules/js/progressbar";
+@import "modules/js/sortable.list";
+@import "modules/js/sticky";
+@import "modules/js/tabs";
+@import "modules/js/tagfield";
+@import "modules/js/tooltips";
+@import "modules/js/treeview";
