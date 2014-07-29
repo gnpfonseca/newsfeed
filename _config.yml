@@ -6,7 +6,7 @@ description: "stuffs about things"
 
 exclude: ['Gruntfile.js','sass','package.json','README','.gitignore','node_modules']
 
-css: ['./assets/css/app.css','.assets/css/ink.css']
+css: ['./assets/css/app.min.css','.assets/css/ink.min.css']
 js: ['./assets/js/libs.js','./assets/js/app.js']
 img: []
 
