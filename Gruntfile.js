@@ -7,6 +7,7 @@ module.exports = function(grunt) {
                 options: {              // Target options
                     httpPath: './',
                     relativeAssets: true,
+                    noLineComments: true,
                     sassDir: 'assets/sass',
                     cssDir: 'assets/css',
                     imagesDir: 'assets/images',
@@ -17,13 +18,35 @@ module.exports = function(grunt) {
         },
 
         cssmin: {
-            options: {
-                keepSpecialComments: 0,
-                report: 'gzip'
-            },
             minify: {
-                src: ['assets/css/app.css'],
-                dest: 'assets/css/app.min.css',
+                expand: true,
+                cwd: 'assets/css',
+                src: ['*.css', '!quick-start.css', '!*min*'],
+                dest: 'assets/css',
+                ext: '.min.css',
+                options: {
+                    keepSpecialComments: 0,
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapFilename: 'assets/css/ink-min.css.map',
+                    sourceMapRootpath: '../../'
+                }
+            }
+        },
+
+        clean: {
+            css: {
+                src: [
+                  'assets/css/*.css'
+                ]
+            },
+            csscontrib: [ 'assets/css/contrib' ]
+        },
+
+        copy: {
+            facss: {
+              src: 'assets/css/contrib/font-awesome/font-awesome.css',
+              dest: 'assets/css/font-awesome.css'
             }
         },
 
@@ -42,12 +65,13 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('css', ['compass','cssmin']);
+    grunt.registerTask('css', ['clean:css','compass','copy','clean:csscontrib','cssmin']);
     grunt.registerTask('animate', ['replace']);
     grunt.registerTask('default', ['watch']);
 
