@@ -45,21 +45,21 @@ module.exports = function(grunt) {
 
         copy: {
             facss: {
-              src: 'assets/css/contrib/font-awesome/font-awesome.css',
-              dest: 'assets/css/font-awesome.css'
+                src: 'assets/css/contrib/font-awesome/font-awesome.css',
+                dest: 'assets/css/font-awesome.css'
             }
         },
 
         watch: {
 
             options: {
-              spawn: false,
+                spawn: false,
             },
 
-          sass: {
-            files: ['assets/sass/**/*.scss'],
-            tasks: ['compass','cssmin'],
-          },
+            sass: {
+                files: ['assets/sass/**/*.scss'],
+                tasks: ['compass','cssmin'],
+            },
         }
 
     });
