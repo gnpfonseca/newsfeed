@@ -1,1 +1,5 @@
-{% for js in site.js %} <script src="{{ js }}"></script> {% endfor %}
+<script>
+    Ink.requireModules(['Ink.UI.Drawer_1'], function(Drawer) {
+      var inkDrawer = new Drawer({ sides: 'left', mode: 'push' });
+    });
+    </script>

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     {% include head.html %}
-    <body>
+    <body class="ink-drawer">
+    	{% include header.html %}
+    	{% include drawer.html %}
+    	
         {{ content }}
         {% include footer.html %}
     </body>
