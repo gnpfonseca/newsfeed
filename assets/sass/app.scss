@@ -3,9 +3,7 @@
 @import "contrib/compass/utilities";
 
 // Import Ink Variables
-@import "config/colors";
-@import "config/common";
-@import "config/typography";
+@import "ink.scss";
 
 // Shorthands
 .fw-100, .fw-light      { font-weight: 100; } 
@@ -31,7 +29,7 @@
 }
 
 .slab-100, .slab-light {
-    font-weight: 100;
+     font-weight: 100;
     font-family: $slab-font-stack;
 }
 
@@ -67,13 +65,24 @@
 .extralarge { font-size: 1.45em !important; }
 
 // Styles
+body {
+    background: #f0f0f0;
+}
+
 .topbar { 
+	@extend .all-100;
 	background: $grey-90; 
 }
 
 .left-drawer {
-	background: $grey-80;
+	background: $grey-80; 
 }
 
-
+.box {
+    border-radius: $border-radius;
+    @extend .half-vertical-space;
+    background: $white;
+    border: 1px solid $grey-20;
+    @include box-shadow(0 1px 2px $grey-20);
+}
 

@@ -5,7 +5,7 @@ var news = {
     date: "",
     offset: 0,
     limit: 20,
-    img_width: 200,
+    img_width: 290,
     img_height: 200,
     page: 0,
     maxid: 0,
@@ -304,7 +304,7 @@ var news = {
                         $("#" + String(s).replace("p-", "d-") + " a").attr({
                             href: e
                         });
-                        $("h2", $("h6", $("#" + s).html(u).parent()).html(f).parent()).html(o);
+                        $("h1", $("h6", $("#" + s).html(u).parent()).html(f).parent()).html(o);
                         $(".text_box", $("#d-" + t.result.key)).html(a).css({
                             display: "none"
                         });
@@ -314,13 +314,13 @@ var news = {
                                 display: "none"
                             })
                         });
-                        $("#d-" + t.result.key + " h2").click(function () {
+                        $("#d-" + t.result.key + " h1").click(function () {
                             $("#d-" + t.result.key).addClass("open");
                             $(".text_box", $("#d-" + t.result.key)).css({
                                 display: "block"
                             })
                         });
-                        $("#d-" + t.result.key + " h2").swipe({
+                        $("#d-" + t.result.key + " h1").swipe({
                             tap: function () {
                                 $("#d-" + t.result.key).addClass("open");
                                 $(".text_box", $("#d-" + t.result.key)).css({
