@@ -6,7 +6,7 @@ description: "stuffs about things"
 
 exclude: ['Gruntfile.js','sass','package.json','README','.gitignore','node_modules']
 
-css: ['assets/css/ink.min.css','assets/css/app.min.css']
+css: ['assets/css/ink.min.css','assets/css/app.min.css','assets/css/font-awesome.min.css']
 js: ['assets/js/libs.js','assets/js/app.js','http://cdn.ink.sapo.pt/3.0.5/js/ink-all.min.js','http://cdn.ink.sapo.pt/3.0.5/js/autoload.js']
 img: []
 
