@@ -5,8 +5,8 @@ var news = {
     date: "",
     offset: 0,
     limit: 20,
-    img_width: 290,
-    img_height: 200,
+    img_width: 340,
+    img_height: 210,
     page: 0,
     maxid: 0,
     username: "",
@@ -221,7 +221,7 @@ var news = {
                 news.active_requests = news.active_requests - 1;
                 console.log("success");
                 if (null !== t) {
-                    if (t.result.image !== false && (200 === parseInt(t.result.image.width), 10) && 200 === parseInt(t.result.image.height, 10) && $("#d-" + t.result.key).length < 1) {
+                    if (t.result.image !== false && (news.img_width === parseInt(t.result.image.width), 10) && news.img_height === parseInt(t.result.image.height, 10) && $("#d-" + t.result.key).length < 1) {
                         news.c = news.c + 1;
                         console.log("displayElement request complete, count : " + news.c);
                         if (news.c > news.n) {
