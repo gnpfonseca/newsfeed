@@ -69,9 +69,17 @@ body {
     background: #f0f0f0;
 }
 
-.topbar { 
+#bar {
+    background: $grey-70;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
 	@extend .all-100;
-	background: $grey-90; 
+	background: rgba(0,0,0,0.9);
+    border-bottom:1px solid $black;
+    @extend .uppercase;
 }
 
 .left-drawer {
@@ -85,14 +93,13 @@ body {
             @extend .fw-300;
             margin: 0;
             padding: .8em 1em;
-            border-bottom: 1px solid $grey-60;
+            border-bottom: 1px solid $grey-70;
             a {
                 color: $grey-30;
                 span {
                     @extend .half-right-space;
                 }
             }
-
         }
     }
 }

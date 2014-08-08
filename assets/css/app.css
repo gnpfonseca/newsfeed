@@ -5914,7 +5914,7 @@ body {
   font-style: italic;
 }
 
-.uppercase, .left-drawer .items li {
+.uppercase, .topbar, .left-drawer .items li {
   text-transform: uppercase;
 }
 
@@ -8600,7 +8600,7 @@ body.ink-drawer.over.right .right-drawer {
   font-style: italic;
 }
 
-.uppercase, .left-drawer .items li {
+.uppercase, .topbar, .left-drawer .items li {
   text-transform: uppercase;
 }
 
@@ -8636,8 +8636,15 @@ body {
   background: #f0f0f0;
 }
 
+#bar {
+  background: #4d4d4d;
+}
+
 .topbar {
-  background: #1a1a1a;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid black;
 }
 
 .left-drawer {
@@ -8651,7 +8658,7 @@ body {
 .left-drawer .items li {
   margin: 0;
   padding: .8em 1em;
-  border-bottom: 1px solid #666666;
+  border-bottom: 1px solid #4d4d4d;
 }
 .left-drawer .items li a {
   color: #b3b3b3;
