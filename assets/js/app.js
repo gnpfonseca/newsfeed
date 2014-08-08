@@ -1,3 +1,4 @@
+// test
 var news = {
     host: "http://sismeiro.com",
     source: "db",
