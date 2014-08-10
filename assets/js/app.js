@@ -425,7 +425,7 @@ var news = {
   },
   
   progressbarDisable: function (){
-    $("#done").css({width: "100%",height: "4px",background: "#171717"});
+    $("#done").css({width: "100%",height: "4px",background: "#4d4d4d"});
   },
   
   progressbarUpdate: function() {
@@ -440,7 +440,7 @@ var news = {
       background: "#4CD964",
       backgroundImage: "linear-gradient(#87fc70, #0bd318)"
     }).parent().css({
-      position: "fixed",
+      position: "relative",
       width: "100%",
       zIndex:'1000000'
     });
