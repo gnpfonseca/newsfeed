@@ -80,10 +80,25 @@ body {
 	background: rgba(0,0,0,0.9);
     border-bottom:1px solid $black;
     @extend .uppercase;
+    z-index: $layer-10;
+    .ink-navigation .menu.black li {
+        a {
+            font-size: .938em;
+            color: $grey-20;
+            text-decoration: none;
+            @include transition(all 120ms ease-in);
+            &:hover { color: $white; }
+            &.left-drawer-trigger {
+                padding-left: 0;
+                &:hover { background: none; }
+            }
+        }
+    }
 }
 
 .left-drawer {
-	background: $grey-85; 
+	margin-top: 40px;
+    background: $grey-85; 
     .items {
         margin: 0;
         padding: 0;
@@ -94,8 +109,18 @@ body {
             margin: 0;
             padding: .8em 1em;
             border-bottom: 1px solid $grey-70;
+            
+            &:hover,
+            &:focus {
+                color: $white;
+                background: $grey-80;
+                a { color: $white; }
+            }
+
             a {
                 color: $grey-30;
+                text-decoration: none;
+
                 span {
                     @extend .half-right-space;
                 }
@@ -109,14 +134,18 @@ body {
 }
 
 .box {
-    //border-radius: $border-radius;
-    //@extend .half-vertical-space;
     background: $white;
-    //border: 1px solid $grey-20;
     @include box-shadow(0 1px 2px $grey-20);
 
     img { width:100% }
     
+    h5 {
+        color: $black;
+        font-weight: 400;
+        font-size: .875em;
+        margin-bottom: .5em;
+    }
+
     h1 {
         @extend .large;
         line-height: normal;
