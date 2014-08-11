@@ -143,11 +143,11 @@ body {
         display: block;
         font-weight: 400;
         font-size: .875em;
-        margin-bottom: .4em;
+        margin-bottom: .3em;
     }
 
     h1 {
-        @extend .large;
+        font-size: 1.125em;
         line-height: normal;
     }
 }

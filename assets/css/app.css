@@ -7196,7 +7196,7 @@ blockquote small::before, blockquote small::after {
   font-size: .85em;
 }
 
-.large, .box h1 {
+.large {
   font-size: 1.2em;
 }
 
@@ -9796,7 +9796,7 @@ body.ink-drawer.over.right .right-drawer {
   font-size: .85em;
 }
 
-.large, .box h1 {
+.large {
   font-size: 1.2em;
 }
 
@@ -9881,8 +9881,9 @@ body {
   display: block;
   font-weight: 400;
   font-size: .875em;
-  margin-bottom: .4em;
+  margin-bottom: .3em;
 }
 .box h1 {
+  font-size: 1.125em;
   line-height: normal;
 }
