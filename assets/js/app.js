@@ -321,7 +321,32 @@ var news = {
           $("#p-" + t.result.key).html(pf);
           $(".text_box", $("#d-" + t.result.key)).html(p);          
         });
+        
+        $("#p-" + t.result.key).click(function() {
+          var p = $("#p-" + t.result.key).html();
+          var pf = $(".text_box", $("#d-" + t.result.key)).html();          
+          $("#p-" + t.result.key).html(pf);
+          $(".text_box", $("#d-" + t.result.key)).html(p);          
+        });
 
+        $("#d-" + t.result.key + " h1").swipe({
+          tap: function() {       
+            var p = $("#p-" + t.result.key).html();
+            var pf = $(".text_box", $("#d-" + t.result.key)).html();          
+            $("#p-" + t.result.key).html(pf);
+            $(".text_box", $("#d-" + t.result.key)).html(p);           
+          }
+        });
+        
+        $("#p-" + t.result.key).swipe({
+          tap: function() {       
+            var p = $("#p-" + t.result.key).html();
+            var pf = $(".text_box", $("#d-" + t.result.key)).html();          
+            $("#p-" + t.result.key).html(pf);
+            $(".text_box", $("#d-" + t.result.key)).html(p);           
+          }
+        });
+        
         /*
         $("#d-" + t.result.key + " h1").swipe({
           tap: function() {            
