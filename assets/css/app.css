@@ -9877,11 +9877,11 @@ body {
 .box img {
   width: 100%;
 }
-.box h5 {
-  color: black;
+.box a.origin {
+  display: block;
   font-weight: 400;
   font-size: .875em;
-  margin-bottom: .5em;
+  margin-bottom: .4em;
 }
 .box h1 {
   line-height: normal;

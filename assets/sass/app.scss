@@ -139,11 +139,11 @@ body {
 
     img { width:100% }
     
-    h5 {
-        color: $black;
+    a.origin {
+        display: block;
         font-weight: 400;
         font-size: .875em;
-        margin-bottom: .5em;
+        margin-bottom: .4em;
     }
 
     h1 {
