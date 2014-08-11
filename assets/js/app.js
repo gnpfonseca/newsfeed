@@ -301,21 +301,28 @@ var news = {
 
         u = u.substring(0, 230) + "...";        
         $("#" + String(s).replace("p-", "d-") + " a").attr({href: e});
+        $("#" + String(s).replace("p-", "d-") + " a.origin").html(t.result.source);
 
         $("h1", $("h6", $("#" + s).html(u).parent()).html(f).parent()).html(o);
 
         $(".text_box", $("#d-" + t.result.key)).html(a).css({display: "none"});
 
+        /*
         $(".text_box", $("#d-" + t.result.key)).click(function() {
           $("#d-" + t.result.key).removeClass("open");
           $(".text_box", $("#d-" + t.result.key)).css({display: "none"});
         });
-
-        $("#d-" + t.result.key + " h1").click(function() {
-          $("#d-" + t.result.key).addClass("open");
-          $(".text_box", $("#d-" + t.result.key)).css({display: "block"});
+        */
+        
+        //change content ...
+        $("#d-" + t.result.key + " h1").click(function() {          
+          var p = $("#p-" + t.result.key).html();
+          var pf = $(".text_box", $("#d-" + t.result.key)).html();          
+          $("#p-" + t.result.key).html(pf);
+          $(".text_box", $("#d-" + t.result.key)).html(p);          
         });
 
+        /*
         $("#d-" + t.result.key + " h1").swipe({
           tap: function() {            
             $("#d-" + t.result.key).addClass("open");
@@ -323,14 +330,16 @@ var news = {
             $("html, body").animate({scrollTop: $("#d-" + t.result.key).position().top - 40}, 300, function() {});
           }
         });
+        */
 
+        /*
         $(".text_box", $("#d-" + t.result.key)).swipe({
           tap: function() {
             $("#d-" + t.result.key).removeClass("open");
             $(".text_box", $("#d-" + t.result.key)).css({display: "none"});
           }
         });
-
+         */
       }
     }
   },
