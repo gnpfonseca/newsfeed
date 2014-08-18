@@ -21,6 +21,7 @@ var news = {
   swipelock: false,
   swipelockid: "",
   list: [],
+  stop: false,
   
   isValidToken: function() {
     var e = false, t = $.cookie("token");
@@ -134,7 +135,9 @@ var news = {
     var e = false;
     news.offset = news.page * news.limit;
     news.page++;
-    
+    if (news.stop) {      
+      return false;
+    }
     $.ajax({
       type: "GET",
       dataType: "json",
@@ -143,7 +146,9 @@ var news = {
     }).success(function(t) {
       
       if ("ok" === t.status) {
-        e = t.result;        
+        if (t.result.length > 0){
+            e = t.result;        
+        }
         if (0 === news.maxid) {
           news.maxid = t.max_id;
         }
@@ -160,8 +165,12 @@ var news = {
       if (false !== e) {
         news.log("add to list");
         news.list = news.list.concat(e);
+      } else {
+        news.stop = true;
+        return false;
       }
     }
+    return true;
   },
   
   watch: function() {
@@ -169,9 +178,16 @@ var news = {
     news.log("watch active requests : " + news.active_requests);
     news.log("watch list length : " + news.list.length);
     
-    if (news.active_requests !== 0) {      
-      setTimeout(function() {news.watch()}, 250);      
+    if (news.active_requests !== 0) {
+      if (!news.stop){
+        setTimeout(function() {news.watch()}, 250);      
+      }
     } else {
+      if (news.stop){
+        news.log('stop');
+        news.progressbarDisable();
+        return false;
+      }
       news.log("end");
       news.log("total - " + news.c + "/" + news.n);
       if (news.c < news.n) {
@@ -197,7 +213,9 @@ var news = {
     if (news.c < e) {
       for (t; t < e; t++) {
         news.log("showN " + t);
-        news.displayElement()
+        if (false === news.displayElement()){
+          break;
+        }
       }      
       news.watch();
       news.log("done");
@@ -380,18 +398,20 @@ var news = {
 
     if (news.active_requests > news.max_requests) {
       news.log("displayElement limit active requests setTimeout :" + news.active_requests);
-      return;
+      return false;
     }
 
     if (news.c >= news.n) {
       news.log("displayElement count limit " + news.c + "/" + news.n);
-      return;
+      return false;
     }
 
-    news.addToList();
+    if (!news.addToList()){
+      return false;
+    }
 
     if (news.list.length < 1) {
-      return;
+      return false;
     }
 
     news.active_requests++;
