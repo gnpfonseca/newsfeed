@@ -9815,12 +9815,25 @@ body {
 .topbar {
   position: fixed;
   top: 0;
-  background: rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid black;
   z-index: 10;
 }
-.topbar .ink-navigation .menu.black li a {
-  font-size: .938em;
+.topbar .ink-navigation {
+  background: rgba(0, 0, 0, 0.8);
+}
+.topbar .ink-navigation .menu li {
+  font-size: .875em;
+}
+.topbar .ink-navigation .menu li.logo {
+  float: right;
+}
+.topbar .ink-navigation .menu li.logo a {
+  padding-right: 0;
+}
+.topbar .ink-navigation .menu li.logo a:hover {
+  background: none;
+}
+.topbar .ink-navigation .menu li a {
   color: #cccccc;
   text-decoration: none;
   -webkit-transition: all 120ms ease-in;
@@ -9828,18 +9841,19 @@ body {
   -o-transition: all 120ms ease-in;
   transition: all 120ms ease-in;
 }
-.topbar .ink-navigation .menu.black li a:hover {
+.topbar .ink-navigation .menu li a:hover, .topbar .ink-navigation .menu li a:focus {
   color: white;
+  background: #404040;
 }
-.topbar .ink-navigation .menu.black li a.left-drawer-trigger {
+.topbar .ink-navigation .menu li a.left-drawer-trigger {
   padding-left: 0;
 }
-.topbar .ink-navigation .menu.black li a.left-drawer-trigger:hover {
+.topbar .ink-navigation .menu li a.left-drawer-trigger:hover {
   background: none;
 }
 
 .left-drawer {
-  margin-top: 40px;
+  margin-top: 42px;
   background: #262626;
 }
 .left-drawer .items {
@@ -9866,6 +9880,15 @@ body {
 
 #mainwrapper {
   margin-top: 4em;
+    /*
+    list-style-type: none;
+
+    li {
+        &:nth-child(3n+1) {
+            clear: both;
+        }
+    }
+    */
 }
 
 .box {

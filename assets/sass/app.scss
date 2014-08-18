@@ -77,27 +77,45 @@ body {
     position: fixed;
     top: 0;
 	@extend .all-100;
-	background: rgba(0,0,0,0.9);
-    border-bottom:1px solid $black;
+	border-bottom:1px solid $black;
     @extend .uppercase;
     z-index: $layer-10;
-    .ink-navigation .menu.black li {
-        a {
-            font-size: .938em;
-            color: $grey-20;
-            text-decoration: none;
-            @include transition(all 120ms ease-in);
-            &:hover { color: $white; }
-            &.left-drawer-trigger {
-                padding-left: 0;
-                &:hover { background: none; }
+    
+    .ink-navigation {
+        background: rgba(0,0,0,0.8);
+            
+        .menu li {
+
+            font-size: .875em;
+            &.logo {
+                float: right;
+                a {
+                    //@extend .slab;
+                    padding-right: 0;
+                    &:hover { background: none; }
+                }
+            }
+
+            a {
+                color: $grey-20;
+                text-decoration: none;
+                @include transition(all 120ms ease-in);
+                &:hover,
+                &:focus { 
+                    color: $white;
+                    background: $grey-75;
+                }
+                &.left-drawer-trigger {
+                    padding-left: 0;
+                    &:hover { background: none; }
+                }
             }
         }
     }
 }
 
 .left-drawer {
-	margin-top: 40px;
+	margin-top: 42px;
     background: $grey-85; 
     .items {
         margin: 0;
@@ -131,6 +149,16 @@ body {
 
 #mainwrapper {
     margin-top: 4em;
+    
+    /*
+    list-style-type: none;
+
+    li {
+        &:nth-child(3n+1) {
+            clear: both;
+        }
+    }
+    */   
 }
 
 .box {
