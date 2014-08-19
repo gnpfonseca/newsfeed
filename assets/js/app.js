@@ -2,7 +2,7 @@
  * News Object 
  */
 var news = {
-  host: "http://sismeiro.com",
+  host: "//actualida.de/api",
   source: "db",
   n: 0,
   date: "",
@@ -50,12 +50,13 @@ var news = {
     var e = $("#" + news.swipelockid + " a").attr("href");
     if (false !== news.token) {
       $.ajax({
-        type: "GET",
+        type: "POST",
         dataType: "json",
         async: true,
         global: false,
         timeout: 5e3,
-        url: news.host + "/?action=iLike&src=" + encodeURIComponent(e) + "&token=" + encodeURIComponent(news.token),
+        url: news.host + "/",
+        data : {action:'iLike',src:e,token:encodeURIComponent(news.token)},
         success: function(e) {
           if (e !== undefined) {            
             if (e.status === "ok") {
@@ -94,12 +95,13 @@ var news = {
     if (false !== news.token) {
       
       $.ajax({
-        type: "GET",
+        type: "POST",
         dataType: "json",
         async: true,
         global: false,
         timeout: 5e3,
-        url: news.host + "/?action=iHate&src=" + encodeURIComponent(e) + "&token=" + encodeURIComponent(news.token),
+        url: news.host + "/",
+        data : {action:'iHate',src:e,token:encodeURIComponent(news.token)},
         success: function(e) {
           
           if (e !== undefined) {
@@ -138,11 +140,18 @@ var news = {
     if (news.stop) {      
       return false;
     }
+    
     $.ajax({
-      type: "GET",
+      type: "POST",
       dataType: "json",
       async: false,
-      url: news.host + "/?action=getArticlesList&url=" + encodeURIComponent(news.source) + "&offset=" + encodeURIComponent(news.offset) + "&limit=" + encodeURIComponent(news.limit) + "&lastid=" + encodeURIComponent(news.maxid)
+      url: news.host + "/",
+      data: {action:'getArticlesList',
+            url:encodeURIComponent(news.source),
+            offset:encodeURIComponent(news.offset),
+            limit:encodeURIComponent(news.limit),
+            lastid:encodeURIComponent(news.maxid)
+            },
     }).success(function(t) {
       
       if ("ok" === t.status) {
@@ -295,7 +304,7 @@ var news = {
         
         var i = $($("#t1").html()).attr({id: "d-" + t.result.key}).addClass(r).hide();
         
-        $("img", i).attr({src: t.result.image.url});
+        $("img", i).first().attr({src: t.result.image.url});
         
         var s = "p-" + t.result.key;
         
@@ -319,8 +328,9 @@ var news = {
 
         u = u.substring(0, 230) + "...";        
         $("#" + String(s).replace("p-", "d-") + " a").attr({href: e});
-        $("#" + String(s).replace("p-", "d-") + " a.origin").html(t.result.source);
-
+        var html = $("#" + String(s).replace("p-", "d-") + " a.origin").html();
+        $("#" + String(s).replace("p-", "d-") + " a.origin").html(html+t.result.source);
+        $("#" + String(s).replace("p-", "d-") + " a.origin img").css({width:'16px'});
         $("h1", $("h6", $("#" + s).html(u).parent()).html(f).parent()).html(o);
 
         $(".text_box", $("#d-" + t.result.key)).html(a).css({display: "none"});
@@ -416,21 +426,23 @@ var news = {
 
     news.active_requests++;
 
-    var e = news.list.shift();
+    var postData, e = news.list.shift();
     news.log("displayElement display :" + e);
-
-    var t = news.host + "/?action=getArticle&url=" + encodeURIComponent(e) + "&width=" + news.img_width + "&height=" + news.img_height;
+    
+    postData = {action:'getArticle',url:e,width:news.img_width,height:news.img_height};
     news.log("displayElement count value " + news.c);
 
     if (news.token !== false) {
-      t += "&token=" + news.token + "&p=__P__";
+      postData = {action:'getArticle',url:e,width:news.img_width,height:news.img_height,token:news.token,p:'__P__'};      
     }
 
     $.ajax({
       type: "GET",
       dataType: "json",
       global: false,
-      url: t,
+      url: news.host + "/",
+      data: postData,
+      cache : true,
       timeout: 5e3,
       success: function(t) {        
         news.displayElementAjaxDispatchSuccess(t,e);
@@ -455,12 +467,13 @@ var news = {
     n = $("#pass").val();
     
     $.ajax({
-      type: "GET",
+      type: "POST",
       dataType: "json",
       async: false,
       global: false,
       timeout: 1e4,
-      url: news.host + "/?action=getToken&username=" + encodeURIComponent(t) + "&password=" + encodeURIComponent(n),
+      url: news.host + "/",
+      data: {action:'getToken',username: encodeURIComponent(t),password:encodeURIComponent(n)},
       success: function(t) {
         if (t !== undefined) {
           if (t.status === "ok") {
@@ -510,10 +523,11 @@ var news = {
     news.progressbarReset();
 
     $.ajax({
-      type: "GET",
+      type: "POST",
       dataType: "json",
       global: false,
-      url: news.host + "/?action=getMaxID&date=" + encodeURIComponent(news.date),
+      url: news.host + "/",
+      data : {action:'getMaxID',date:encodeURIComponent(news.date)},
       timeout: 5e3,
       success: function(e) {
         if (e !== undefined) {
