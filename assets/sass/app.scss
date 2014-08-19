@@ -80,9 +80,9 @@ body {
 	border-bottom:1px solid $black;
     @extend .uppercase;
     z-index: $layer-10;
+    background: rgba(0,0,0,0.8);
     
     .ink-navigation {
-        background: rgba(0,0,0,0.8);
             
         .menu li {
 

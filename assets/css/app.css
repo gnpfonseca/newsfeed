@@ -9817,8 +9817,6 @@ body {
   top: 0;
   border-bottom: 1px solid black;
   z-index: 10;
-}
-.topbar .ink-navigation {
   background: rgba(0, 0, 0, 0.8);
 }
 .topbar .ink-navigation .menu li {
