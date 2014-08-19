@@ -178,5 +178,25 @@ body {
         font-size: 1.125em;
         line-height: normal;
     }
+
+    .toolbar {
+        button {
+            background: $white;
+            border: none;
+            border-top: 1px solid $grey-10;
+            padding: .8em;
+            &:hover,
+            &:focus {
+                background: #f0f0f0;
+            }
+            &.love { 
+                color: $green;
+                border-right: 1px solid $grey-15; 
+            }
+            &.hate {
+                color: red;
+            }
+        }
+    }
 }
 

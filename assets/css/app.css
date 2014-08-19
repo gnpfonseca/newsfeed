@@ -9908,3 +9908,19 @@ body {
   font-size: 1.125em;
   line-height: normal;
 }
+.box .toolbar button {
+  background: white;
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  padding: .8em;
+}
+.box .toolbar button:hover, .box .toolbar button:focus {
+  background: #f0f0f0;
+}
+.box .toolbar button.love {
+  color: #4a9b17;
+  border-right: 1px solid #d9d9d9;
+}
+.box .toolbar button.hate {
+  color: red;
+}
