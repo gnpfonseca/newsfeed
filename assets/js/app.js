@@ -593,7 +593,7 @@ var news = {
   
   enableDrawer: function (e){
     
-    e('a.left-drawer-trigger').bind('click.drawer', function(event) {
+    e('.left-drawer-trigger').bind('click.drawer', function(event) {
       event.preventDefault();
       if (parseInt(e(window).width(), 10) <= 960) {
         if (!e('body').hasClass('push')) {news.openDrawer(e);} 
