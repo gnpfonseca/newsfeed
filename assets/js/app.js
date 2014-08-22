@@ -22,6 +22,7 @@ var news = {
   swipelockid: "",
   list: [],
   stop: false,
+  isDrawerOpen: false,
   
   isValidToken: function() {
     var e = false, t = $.cookie("token");
@@ -355,7 +356,10 @@ var news = {
 
         
         //change content ...
-        $("#d-" + t.result.key + " h1").click(function() {          
+        $("#d-" + t.result.key + " h1").click(function() {
+          if (news.isDrawerOpen){            
+            return true;
+          }
           var p = $("#p-" + t.result.key).html();
           var pf = $(".text_box", $("#d-" + t.result.key)).html();          
           $("#p-" + t.result.key).html(pf);
@@ -364,6 +368,9 @@ var news = {
         });
         
         $("#p-" + t.result.key).click(function() {
+          if (news.isDrawerOpen){            
+            return true;
+          }
           var p = $("#p-" + t.result.key).html();
           var pf = $(".text_box", $("#d-" + t.result.key)).html();          
           $("#p-" + t.result.key).html(pf);
@@ -564,6 +571,45 @@ var news = {
         }
       }
     });
+  },
+  
+  openDrawer : function (e){
+    news.isDrawerOpen = true;
+    e('.left-drawer').addClass('show');
+    e('ul.items').height(parseInt(e('div.left-drawer').height(), 10) + 80);
+    setTimeout(function() {e('body').addClass('push left');}, 200);    
+    e('.content-drawer').bind('click.close', function(event) {
+      event.preventDefault();
+      e(this).unbind('click.close');
+      news.closeDrawer(e);
+    });
+  },
+  
+  closeDrawer : function(e){
+     news.isDrawerOpen = false;
+     e('body').removeClass('push left');
+     setTimeout(function() {e('.left-drawer').removeClass('show');}, 200);
+  },
+  
+  enableDrawer: function (e){
+    
+    e('a.left-drawer-trigger').bind('click.drawer', function(event) {
+      event.preventDefault();
+      if (parseInt(e(window).width(), 10) <= 960) {
+        if (!e('body').hasClass('push')) {news.openDrawer(e);} 
+        else {news.closeDrawer(e);}
+      }
+    });
+    
+    e(window).resize(function() {
+       if (parseInt(e(window).width(), 10) > 960) {
+         if (news.isDrawerOpen) {
+           e('body').removeClass('push left');
+           e('.left-drawer').removeClass('show');
+           e('.content-drawer').unbind('click.close');
+         }         
+       }
+    });
   }
 };
 
@@ -573,5 +619,6 @@ var news = {
 jQuery(document).ready(function(e) {
   news.start();
   news.infiniteScrollStart(e);
+  news.enableDrawer(e);
   e("#data").blur(function() {news.date = e(this).val();news.updateMaxId();}).attr({value: "2014-01-01"});
 });
