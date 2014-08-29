@@ -2,7 +2,7 @@
  * News Object 
  */
 var news = {
-  host: "//actualida.de/api",
+  host: "https://actualida.de/api",
   source: "db",
   n: 0,
   date: "",
