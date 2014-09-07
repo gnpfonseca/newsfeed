@@ -9834,7 +9834,7 @@ body {
   font-size: 2.2em;
   color: orange;
   line-height: 0;
-  margin: 0 -.05em 0 -.1em;
+  margin: 0 -4px 0 -6px;
 }
 .topbar .ink-navigation .menu li.logo a:hover {
   background: none;
