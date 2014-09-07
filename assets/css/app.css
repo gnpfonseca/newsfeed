@@ -7012,7 +7012,7 @@ body {
   font-family: Roboto_slab, Arial, Helvetica, sans-serif;
 }
 
-.slab-400, .slab-regular {
+.slab-400, .topbar .ink-navigation .menu li.logo a, .slab-regular {
   font-weight: 400;
   font-family: Roboto_slab, Arial, Helvetica, sans-serif;
 }
@@ -7050,7 +7050,7 @@ body {
   text-transform: uppercase;
 }
 
-.lowercase {
+.lowercase, .topbar .ink-navigation .menu li.logo a {
   text-transform: lowercase;
 }
 
@@ -9738,7 +9738,7 @@ body.ink-drawer.over.right .right-drawer {
   font-family: Roboto_slab, Arial, Helvetica, sans-serif;
 }
 
-.slab-400, .slab-regular {
+.slab-400, .topbar .ink-navigation .menu li.logo a, .slab-regular {
   font-weight: 400;
   font-family: Roboto_slab, Arial, Helvetica, sans-serif;
 }
@@ -9776,7 +9776,7 @@ body.ink-drawer.over.right .right-drawer {
   text-transform: uppercase;
 }
 
-.lowercase {
+.lowercase, .topbar .ink-navigation .menu li.logo a {
   text-transform: lowercase;
 }
 
@@ -9824,11 +9824,17 @@ body {
 .topbar .ink-navigation .menu li {
   font-size: .875em;
 }
-.topbar .ink-navigation .menu li.logo {
-  float: right;
-}
 .topbar .ink-navigation .menu li.logo a {
-  padding-right: 0;
+  font-size: 1.5em;
+  padding: 0;
+  color: white;
+}
+.topbar .ink-navigation .menu li.logo a span.dot {
+  font-family: a;
+  font-size: 2.2em;
+  color: orange;
+  line-height: 0;
+  margin: 0 -.05em 0 -.1em;
 }
 .topbar .ink-navigation .menu li.logo a:hover {
   background: none;
@@ -9845,14 +9851,17 @@ body {
   color: white;
   background: #404040;
 }
-.topbar .ink-navigation .menu li .left-drawer-trigger {
+.topbar .ink-navigation .menu li.left-drawer-trigger {
+  z-index: 100;
+}
+.topbar .ink-navigation .menu li.left-drawer-trigger button {
   height: 42px;
   padding: 0;
   border: none;
   color: #cccccc;
   background: none;
 }
-.topbar .ink-navigation .menu li .left-drawer-trigger:hover, .topbar .ink-navigation .menu li .left-drawer-trigger:focus {
+.topbar .ink-navigation .menu li.left-drawer-trigger button:hover, .topbar .ink-navigation .menu li.left-drawer-trigger button:focus {
   color: white;
 }
 
@@ -9933,4 +9942,40 @@ body {
 }
 .box .toolbar button.hate {
   color: red;
+}
+
+/* for xlarge screens */
+@media screen and (min-width: 1261px) {
+  /* your css for xlarge screens goes here ... */
+}
+/* for large screens */
+@media screen and (min-width: 961px) and (max-width: 1260px) {
+  /* your css for large screens goes here ... */
+}
+/* for medium screens */
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  /* your css for medium screens goes here ... */
+  .topbar .ink-navigation .menu li.logo a {
+    height: 40px;
+    display: block;
+    line-height: 38px;
+  }
+}
+/* for small screens */
+@media screen and (min-width: 321px) and (max-width: 640px) {
+  /* your css for small screens goes here ... */
+  .topbar .ink-navigation .menu li.logo a {
+    height: 40px;
+    display: block;
+    line-height: 38px;
+  }
+}
+/* for tiny screens */
+@media screen and (max-width: 320px) {
+  /* your css for tiny screens goes here ... */
+  .topbar .ink-navigation .menu li.logo a {
+    height: 40px;
+    display: block;
+    line-height: 38px;
+  }
 }
