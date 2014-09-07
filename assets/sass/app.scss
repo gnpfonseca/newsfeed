@@ -90,10 +90,19 @@ body {
 
             font-size: .875em;
             &.logo {
-                float: right;
                 a {
-                    //@extend .slab;
-                    padding-right: 0;
+                    font-size: 1.5em;
+                    padding: 0;
+                    @extend .lowercase;
+                    @extend .slab-400;
+                    color: $white;
+                    span.dot {
+                        font-family: a;
+                        font-size: 2.2em;
+                        color: orange;
+                        line-height: 0;
+                        margin: 0 -.05em 0 -.1em;
+                    }
                     &:hover { background: none; }
                 }
             }
@@ -115,6 +124,7 @@ body {
                 border: none;
                 color: $grey-20;
                 background: none;
+                z-index: $layer-100;
                 &:hover,
                 &:focus {
                     color: $white;
@@ -210,6 +220,48 @@ body {
             &.hate {
                 color: red;
             }
+        }
+    }
+}
+
+/* for xlarge screens */
+@media screen and (min-width: 1261px) {
+  /* your css for xlarge screens goes here ... */
+}
+/* for large screens */
+@media screen and (min-width: 961px) and (max-width: 1260px) {
+  /* your css for large screens goes here ... */
+}
+/* for medium screens */
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  /* your css for medium screens goes here ... */
+    .topbar .ink-navigation .menu li {
+        &.logo a {
+           height: 40px;
+            display: block;
+            line-height: 38px;
+        }
+    }
+}
+/* for small screens */
+@media screen and (min-width: 321px) and (max-width: 640px) {
+    /* your css for small screens goes here ... */
+    .topbar .ink-navigation .menu li {
+        &.logo a {
+           height: 40px;
+            display: block;
+            line-height: 38px;
+        }
+    }
+}
+/* for tiny screens */
+@media screen and (max-width: 320px) {
+    /* your css for tiny screens goes here ... */
+    .topbar .ink-navigation .menu li {
+        &.logo a {
+           height: 40px;
+            display: block;
+            line-height: 38px;
         }
     }
 }
