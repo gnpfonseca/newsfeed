@@ -9829,12 +9829,18 @@ body {
   padding: 0;
   color: white;
 }
+.topbar .ink-navigation .menu li.logo a span:first-child {
+  margin-right: -2px;
+}
 .topbar .ink-navigation .menu li.logo a span.dot {
   height: .2em;
   width: .2em;
   border-radius: 50%;
   background: orange;
   display: inline-block;
+}
+.topbar .ink-navigation .menu li.logo a span:last-child {
+  margin-left: -2px;
 }
 .topbar .ink-navigation .menu li.logo a:hover {
   background: none;

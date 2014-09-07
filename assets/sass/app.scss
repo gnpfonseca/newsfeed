@@ -96,16 +96,24 @@ body {
                     @extend .lowercase;
                     @extend .slab-400;
                     color: $white;
-                    span.dot {
-                        //font-family: a;
-                        //font-size: 2.2em;
-                        height: .2em;
-                        width: .2em;
-                        border-radius: 50%;
-                        background: orange;
-                        display: inline-block;
-                        //line-height: 0;
-                        //margin: 0 -4px 0 -6px;
+                    span {
+                        &:first-child {
+                            margin-right: -2px;
+                        }
+                        &.dot {
+                            //font-family: a;
+                            //font-size: 2.2em;
+                            height: .2em;
+                            width: .2em;
+                            border-radius: 50%;
+                            background: orange;
+                            display: inline-block;
+                            //line-height: 0;
+                            //margin: 0 -4px 0 -6px;
+                        }
+                        &:last-child {
+                            margin-left: -2px;
+                        }
                     }
                     &:hover { background: none; }
                 }
