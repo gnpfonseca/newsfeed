@@ -97,11 +97,15 @@ body {
                     @extend .slab-400;
                     color: $white;
                     span.dot {
-                        font-family: a;
-                        font-size: 2.2em;
-                        color: orange;
-                        line-height: 0;
-                        margin: 0 -4px 0 -6px;
+                        //font-family: a;
+                        //font-size: 2.2em;
+                        height: .2em;
+                        width: .2em;
+                        border-radius: 50%;
+                        background: orange;
+                        display: inline-block;
+                        //line-height: 0;
+                        //margin: 0 -4px 0 -6px;
                     }
                     &:hover { background: none; }
                 }

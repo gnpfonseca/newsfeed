@@ -9830,11 +9830,11 @@ body {
   color: white;
 }
 .topbar .ink-navigation .menu li.logo a span.dot {
-  font-family: a;
-  font-size: 2.2em;
-  color: orange;
-  line-height: 0;
-  margin: 0 -4px 0 -6px;
+  height: .2em;
+  width: .2em;
+  border-radius: 50%;
+  background: orange;
+  display: inline-block;
 }
 .topbar .ink-navigation .menu li.logo a:hover {
   background: none;
