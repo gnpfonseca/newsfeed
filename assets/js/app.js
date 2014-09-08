@@ -4,7 +4,7 @@
 var news = {
   host: "https://actualida.de/api",
   source: "db",
-  n: 0,
+  n: 9,
   date: "",
   offset: 0,
   limit: 20,
@@ -67,7 +67,7 @@ var news = {
                 $("#pref").remove();
                 
                 $("#" + news.swipelockid).animate({marginLeft: "+=200"}, 200, function() {
-                  $("html, body").animate({scrollTop: $("#" + news.swipelockid).position().top + 187}, 300, function() {news.swipelockid = ""});
+                  $("html, body").animate({scrollTop: $("#" + news.swipelockid).position().top + 187}, 300, function() {news.swipelockid = "";});
                 });
                 
               }, 333);
@@ -83,7 +83,7 @@ var news = {
         error: function() {
           alert("Connection error!");
         }
-      })
+      });
     } else {
       alert("Please Log In!");
     }
@@ -152,7 +152,7 @@ var news = {
             offset:encodeURIComponent(news.offset),
             limit:encodeURIComponent(news.limit),
             lastid:encodeURIComponent(news.maxid)
-            },
+            }
     }).success(function(t) {
       
       if ("ok" === t.status) {
@@ -190,7 +190,7 @@ var news = {
     
     if (news.active_requests !== 0) {
       if (!news.stop){
-        setTimeout(function() {news.watch()}, 250);      
+        setTimeout(function() {news.watch();}, 250);      
       }
     } else {
       if (news.stop){
@@ -255,7 +255,7 @@ var news = {
             $("#iLike").on("click", function() {
               var e = $(this);
               e.addClass("iLikeClicked");
-              setTimeout(function() {e.removeClass("iLikeClicked")}, 350);
+              setTimeout(function() {e.removeClass("iLikeClicked");}, 350);
               news.iLike();
             });
 
@@ -324,6 +324,12 @@ var news = {
         
         $("img", i).first().attr({src: t.result.image.url});
         
+        if ("undefined" !== typeof t.result.faveicon){
+            if (false !== t.result.faveicon){
+                $("img.icon", i).attr({src: t.result.faveicon});    
+            }                 
+        }
+        
         var s = "p-" + t.result.key;
         
         $("p", i).attr({id: s});
@@ -377,33 +383,17 @@ var news = {
           $(".text_box", $("#d-" + t.result.key)).html(p); 
           $("html, body").animate({scrollTop: $("#d-" + t.result.key).position().top + 150}, 300, function() {});
         });
-       
         
-        
-        /*
-        $("#d-" + t.result.key + " h1").swipe({
-          tap: function() {            
-            $("#d-" + t.result.key).addClass("open");
-            $(".text_box", $("#d-" + t.result.key)).css({display: "block"});            
-            $("html, body").animate({scrollTop: $("#d-" + t.result.key).position().top - 40}, 300, function() {});
-          }
-        });
-        */
-
-        /*
-        $(".text_box", $("#d-" + t.result.key)).swipe({
-          tap: function() {
-            $("#d-" + t.result.key).removeClass("open");
-            $(".text_box", $("#d-" + t.result.key)).css({display: "none"});
-          }
-        });
-         */
+        news.trackLoadDomain(e);
       }
     }
   },
   
   displayElementAjaxDispatchError: function() {
     news.active_requests = news.active_requests - 1;
+    if ("undefined" !== typeof ga) {
+      ga('send', 'exception', {'exDescription': 'Error getting article'});
+    }
     news.log("error");
   },
   
@@ -431,7 +421,7 @@ var news = {
 
     news.active_requests++;
 
-    var postData, e = news.list.shift();
+    var postData, e = news.list.shift();   
     news.log("displayElement display :" + e);
     
     postData = {action:'getArticle',url:e,width:news.img_width,height:news.img_height};
@@ -558,7 +548,7 @@ var news = {
   start: function() {
     news.isValidToken();
     news.progressbarReset();
-    news.showN(25);
+    news.showN();
   },
   
   infiniteScrollStart: function(e) {
@@ -610,7 +600,25 @@ var news = {
          }         
        }
     });
-  }
+  },
+          
+ trackClickDomain: function(url){
+   if ('undefined' !== typeof ga) {
+    alert('nice');
+    var d = String(url).match(/:\/\/([^/]+)/)[1];
+    ga('send', 'event', 'domain', 'click', d);
+   }
+   return true;
+ },
+ 
+ trackLoadDomain: function(url){  
+   if ('undefined' !== typeof ga) {
+    var d = String(url).match(/:\/\/([^/]+)/)[1];
+    ga('send', 'event', 'domain', 'loaded', d);
+   }
+   return true;
+ }
+ 
 };
 
 /**
