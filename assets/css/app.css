@@ -9778,6 +9778,27 @@ body {
 .left-drawer .items li:hover a, .left-drawer .items li:focus a {
   color: white;
 }
+.left-drawer .items li:hover a span.internacional, .left-drawer .items li:focus a span.internacional {
+  color: white;
+}
+.left-drawer .items li:hover a span.cultura, .left-drawer .items li:focus a span.cultura {
+  color: #817fe0;
+}
+.left-drawer .items li:hover a span.ciencias, .left-drawer .items li:focus a span.ciencias {
+  color: #5fbce4;
+}
+.left-drawer .items li:hover a span.tecnologia, .left-drawer .items li:focus a span.tecnologia {
+  color: #ffd633;
+}
+.left-drawer .items li:hover a span.desporto, .left-drawer .items li:focus a span.desporto {
+  color: #ffaa33;
+}
+.left-drawer .items li:hover a span.politica, .left-drawer .items li:focus a span.politica {
+  color: #ff6a60;
+}
+.left-drawer .items li:hover a span.geral, .left-drawer .items li:focus a span.geral {
+  color: #a8a8ac;
+}
 .left-drawer .items li a {
   color: #b3b3b3;
   text-decoration: none;
@@ -9786,35 +9807,26 @@ body {
   color: #fdfdfd;
 }
 .left-drawer .items li a span.cultura {
-  color: #5856D6;
+  color: #5856d6;
 }
 .left-drawer .items li a span.ciencias {
-  color: #34AADC;
+  color: #34aadc;
 }
 .left-drawer .items li a span.tecnologia {
-  color: #FFCC00;
+  color: #ffcc00;
 }
 .left-drawer .items li a span.desporto {
-  color: #FF9500;
+  color: #ff9500;
 }
 .left-drawer .items li a span.politica {
-  color: #FF3A2D;
+  color: #ff3a2d;
 }
 .left-drawer .items li a span.geral {
-  color: #8E8E93;
+  color: #8e8e93;
 }
 
 #mainwrapper {
   margin-top: 4em;
-  /*
-  list-style-type: none;  
-  
-  li {
-      &:nth-child(3n+1) {
-          clear: both;
-      }
-  }
-  */
 }
 
 .box {

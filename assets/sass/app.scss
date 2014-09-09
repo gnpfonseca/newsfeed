@@ -5,6 +5,15 @@
 // Import Ink Variables
 @import "ink-flex.scss";
 
+//Site variables
+$internacional: #FDFDFD; 
+$cultura:       #5856D6;       
+$ciencias:      #34AADC;      
+$tecnologia:    #FFCC00;    
+$desporto:      #FF9500;      
+$politica:      #FF3A2D;      
+$geral:         #8E8E93;         
+
 // Styles
 body {
     background: #f0f0f0;
@@ -102,7 +111,18 @@ body {
             &:focus {
                 color: $white;
                 background: $grey-80;
-                a { color: $white; }
+                a { 
+                    color: $white; 
+                    span {
+                        &.internacional { color: lighten($internacional,10%) ; }
+                        &.cultura       { color: lighten($cultura,10%)       ; }
+                        &.ciencias      { color: lighten($ciencias,10%)      ; }
+                        &.tecnologia    { color: lighten($tecnologia,10%)    ; }
+                        &.desporto      { color: lighten($desporto,10%)      ; }
+                        &.politica      { color: lighten($politica,10%)      ; }
+                        &.geral         { color: lighten($geral,10%)         ; }
+                    }
+                }
             }
 
             a {
@@ -111,13 +131,13 @@ body {
 
                 span {
                     @extend .half-right-space;
-                    &.internacional { color: #fdfdfd; }
-                    &.cultura       { color: #5856D6; }
-                    &.ciencias      { color: #34AADC; }
-                    &.tecnologia    { color: #FFCC00; }
-                    &.desporto      { color: #FF9500; }
-                    &.politica      { color: #FF3A2D; }
-                    &.geral         { color: #8E8E93; }
+                    &.internacional { color: $internacional ; }
+                    &.cultura       { color: $cultura       ; }
+                    &.ciencias      { color: $ciencias      ; }
+                    &.tecnologia    { color: $tecnologia    ; }
+                    &.desporto      { color: $desporto      ; }
+                    &.politica      { color: $politica      ; }
+                    &.geral         { color: $geral         ; }
                 }
             }
         }
@@ -126,16 +146,6 @@ body {
 
 #mainwrapper {
     margin-top: 4em;
-    
-    /*
-    list-style-type: none;  
-    
-    li {
-        &:nth-child(3n+1) {
-            clear: both;
-        }
-    }
-    */   
 }
 
 .box {
