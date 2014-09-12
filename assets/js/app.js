@@ -370,7 +370,7 @@ var news = {
           var pf = $(".text_box", $("#d-" + t.result.key)).html();          
           $("#p-" + t.result.key).html(pf);
           $(".text_box", $("#d-" + t.result.key)).html(p);      
-          $("html, body").velocity({scrollTop: $("#d-" + t.result.key).position().top + 150}, 300, function() {});
+          $("html, body").animate({scrollTop: $("#d-" + t.result.key).position().top + 150}, 300, function() {});
         });
         
         $("#p-" + t.result.key).click(function() {
@@ -381,7 +381,7 @@ var news = {
           var pf = $(".text_box", $("#d-" + t.result.key)).html();          
           $("#p-" + t.result.key).html(pf);
           $(".text_box", $("#d-" + t.result.key)).html(p); 
-          $("html, body").velocity({scrollTop: $("#d-" + t.result.key).position().top + 150}, 300, function() {});
+          $("html, body").animate({scrollTop: $("#d-" + t.result.key).position().top + 150}, 300, function() {});
         });
         
         news.trackLoadDomain(e);
