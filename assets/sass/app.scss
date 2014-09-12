@@ -149,6 +149,7 @@ body {
 }
 
 .box {
+    position: relative;
     background: $white;
     @include box-shadow(0 1px 2px $grey-20);
 
@@ -172,6 +173,9 @@ body {
     }
 
     .toolbar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         button {
             background: $white;
             border: none;

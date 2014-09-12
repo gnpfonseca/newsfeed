@@ -9830,6 +9830,7 @@ body {
 }
 
 .box {
+  position: relative;
   background: white;
   -webkit-box-shadow: 0 1px 2px #cccccc;
   -moz-box-shadow: 0 1px 2px #cccccc;
@@ -9852,6 +9853,11 @@ body {
 .box h1 {
   font-size: 1.125em;
   line-height: normal;
+}
+.box .toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .box .toolbar button {
   background: white;

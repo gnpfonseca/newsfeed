@@ -6,8 +6,8 @@ description: "stuffs about things"
 
 exclude: ['Gruntfile.js','sass','package.json','README','.gitignore','node_modules']
 
-css: ['https://atualida.de/assets/css/app.min.css','https://atualida.de/assets/css/font-awesome.min.css']
-js: ['https://atualida.de/assets/js/libs.js','https://atualida.de/assets/js/velocity.min.js','https://atualida.de/assets/js/app.js']
+css: ['assets/css/app.min.css','https://atualida.de/assets/css/font-awesome.min.css']
+js: ['https://atualida.de/assets/js/libs.js','assets/js/app.js']
 img: []
 
 

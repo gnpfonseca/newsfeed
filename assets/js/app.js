@@ -623,7 +623,7 @@ var news = {
     return true;
   },
   navAnimate: {
-    selector: '.topbar nav',
+    selector: '.topbar',
     lastScrollTop: 0,
     status: 'UP',
     on: true,

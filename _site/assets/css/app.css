@@ -7012,7 +7012,7 @@ body {
   font-family: Roboto_slab, Arial, Helvetica, sans-serif;
 }
 
-.slab-400, .slab-regular {
+.slab-400, .topbar .ink-navigation .menu li.logo a, .slab-regular {
   font-weight: 400;
   font-family: Roboto_slab, Arial, Helvetica, sans-serif;
 }
@@ -7050,7 +7050,7 @@ body {
   text-transform: uppercase;
 }
 
-.lowercase {
+.lowercase, .topbar .ink-navigation .menu li.logo a {
   text-transform: lowercase;
 }
 
@@ -9689,121 +9689,6 @@ body.ink-drawer.over.right .right-drawer {
   text-decoration: none;
 }
 
-.fw-100, .fw-light {
-  font-weight: 100;
-}
-
-.fw-300, .left-drawer .items li, .fw-thin {
-  font-weight: 300;
-}
-
-.fw-400, .fw-regular {
-  font-weight: 400;
-}
-
-.fw-500, .fw-medium {
-  font-weight: 500;
-}
-
-.fw-700, .fw-bold {
-  font-weight: 700;
-}
-
-.fw-900, .fw-black {
-  font-weight: 900;
-}
-
-.condensed-300, .condensed-thin {
-  font-weight: 300;
-  font-family: Roboto_condensed, Arial, Helvetica, sans-serif;
-}
-
-.condensed-400, .condensed-regular {
-  font-weight: 400;
-  font-family: Roboto_condensed, Arial, Helvetica, sans-serif;
-}
-
-.condensed-700, .condensed-bold {
-  font-weight: 700;
-  font-family: Roboto_condensed, Arial, Helvetica, sans-serif;
-}
-
-.slab-100, .slab-light {
-  font-weight: 100;
-  font-family: Roboto_slab, Arial, Helvetica, sans-serif;
-}
-
-.slab-300, .slab-thin {
-  font-weight: 300;
-  font-family: Roboto_slab, Arial, Helvetica, sans-serif;
-}
-
-.slab-400, .slab-regular {
-  font-weight: 400;
-  font-family: Roboto_slab, Arial, Helvetica, sans-serif;
-}
-
-.slab-700, .slab-bold {
-  font-weight: 700;
-  font-family: Roboto_slab, Arial, Helvetica, sans-serif;
-}
-
-.sans {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-
-.serif {
-  font-family: Times, "Times New Roman", serif;
-}
-
-.monospace {
-  font-family: Monaco, "Andale Mono", "Courier New", monospace;
-}
-
-.condensed {
-  font-family: Roboto_condensed, Arial, Helvetica, sans-serif;
-}
-
-.slab {
-  font-family: Roboto_slab, Arial, Helvetica, sans-serif;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.uppercase, .topbar, .left-drawer .items li {
-  text-transform: uppercase;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.normal {
-  text-transform: none;
-}
-
-.small {
-  font-size: .75em;
-}
-
-.medium {
-  font-size: .85em;
-}
-
-.large {
-  font-size: 1.2em;
-}
-
-.extralarge {
-  font-size: 1.45em !important;
-}
-
 body {
   background: #f0f0f0;
 }
@@ -9824,11 +9709,25 @@ body {
 .topbar .ink-navigation .menu li {
   font-size: .875em;
 }
-.topbar .ink-navigation .menu li.logo {
-  float: right;
-}
 .topbar .ink-navigation .menu li.logo a {
-  padding-right: 0;
+  font-size: 1.5em;
+  padding: 0;
+  color: white;
+}
+.topbar .ink-navigation .menu li.logo a span {
+  display: inline-block;
+}
+.topbar .ink-navigation .menu li.logo a span:first-child {
+  margin-right: -2px;
+}
+.topbar .ink-navigation .menu li.logo a span.dot {
+  height: .2em;
+  width: .2em;
+  border-radius: 50%;
+  background: orange;
+}
+.topbar .ink-navigation .menu li.logo a span:last-child {
+  margin-left: -2px;
 }
 .topbar .ink-navigation .menu li.logo a:hover {
   background: none;
@@ -9845,14 +9744,17 @@ body {
   color: white;
   background: #404040;
 }
-.topbar .ink-navigation .menu li .left-drawer-trigger {
+.topbar .ink-navigation .menu li.left-drawer-trigger {
+  z-index: 100;
+}
+.topbar .ink-navigation .menu li.left-drawer-trigger button {
   height: 42px;
   padding: 0;
   border: none;
   color: #cccccc;
   background: none;
 }
-.topbar .ink-navigation .menu li .left-drawer-trigger:hover, .topbar .ink-navigation .menu li .left-drawer-trigger:focus {
+.topbar .ink-navigation .menu li.left-drawer-trigger button:hover, .topbar .ink-navigation .menu li.left-drawer-trigger button:focus {
   color: white;
 }
 
@@ -9876,25 +9778,59 @@ body {
 .left-drawer .items li:hover a, .left-drawer .items li:focus a {
   color: white;
 }
+.left-drawer .items li:hover a span.internacional, .left-drawer .items li:focus a span.internacional {
+  color: white;
+}
+.left-drawer .items li:hover a span.cultura, .left-drawer .items li:focus a span.cultura {
+  color: #817fe0;
+}
+.left-drawer .items li:hover a span.ciencias, .left-drawer .items li:focus a span.ciencias {
+  color: #5fbce4;
+}
+.left-drawer .items li:hover a span.tecnologia, .left-drawer .items li:focus a span.tecnologia {
+  color: #ffd633;
+}
+.left-drawer .items li:hover a span.desporto, .left-drawer .items li:focus a span.desporto {
+  color: #ffaa33;
+}
+.left-drawer .items li:hover a span.politica, .left-drawer .items li:focus a span.politica {
+  color: #ff6a60;
+}
+.left-drawer .items li:hover a span.geral, .left-drawer .items li:focus a span.geral {
+  color: #a8a8ac;
+}
 .left-drawer .items li a {
   color: #b3b3b3;
   text-decoration: none;
 }
+.left-drawer .items li a span.internacional {
+  color: #fdfdfd;
+}
+.left-drawer .items li a span.cultura {
+  color: #5856d6;
+}
+.left-drawer .items li a span.ciencias {
+  color: #34aadc;
+}
+.left-drawer .items li a span.tecnologia {
+  color: #ffcc00;
+}
+.left-drawer .items li a span.desporto {
+  color: #ff9500;
+}
+.left-drawer .items li a span.politica {
+  color: #ff3a2d;
+}
+.left-drawer .items li a span.geral {
+  color: #8e8e93;
+}
 
 #mainwrapper {
   margin-top: 4em;
-  /*
-  list-style-type: none;  
-  
-  li {
-      &:nth-child(3n+1) {
-          clear: both;
-      }
-  }
-  */
 }
 
 .box {
+  position: relative;
   background: white;
   -webkit-box-shadow: 0 1px 2px #cccccc;
   -moz-box-shadow: 0 1px 2px #cccccc;
@@ -9918,6 +9854,11 @@ body {
   font-size: 1.125em;
   line-height: normal;
 }
+.box .toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 .box .toolbar button {
   background: white;
   border: none;
@@ -9933,4 +9874,40 @@ body {
 }
 .box .toolbar button.hate {
   color: red;
+}
+
+/* for xlarge screens */
+@media screen and (min-width: 1261px) {
+  /* your css for xlarge screens goes here ... */
+}
+/* for large screens */
+@media screen and (min-width: 961px) and (max-width: 1260px) {
+  /* your css for large screens goes here ... */
+}
+/* for medium screens */
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  /* your css for medium screens goes here ... */
+  .topbar .ink-navigation .menu li.logo a {
+    height: 40px;
+    display: block;
+    line-height: 38px;
+  }
+}
+/* for small screens */
+@media screen and (min-width: 321px) and (max-width: 640px) {
+  /* your css for small screens goes here ... */
+  .topbar .ink-navigation .menu li.logo a {
+    height: 40px;
+    display: block;
+    line-height: 38px;
+  }
+}
+/* for tiny screens */
+@media screen and (max-width: 320px) {
+  /* your css for tiny screens goes here ... */
+  .topbar .ink-navigation .menu li.logo a {
+    height: 40px;
+    display: block;
+    line-height: 38px;
+  }
 }
