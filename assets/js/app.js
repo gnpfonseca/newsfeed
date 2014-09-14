@@ -627,33 +627,66 @@ var news = {
     lastScrollTop: 0,
     status: 'UP',
     on: true,
+    x : -1,
     show: function() {
-      $(this.selector).animate({marginTop: '0px'}, 250);
+      $(this.selector).stop().animate({marginTop: '0px'}, 300);
     },
     hide: function() {
-      $(this.selector).animate({marginTop: '-45px'}, 250);
+      $(this.selector).stop().animate({marginTop: '-45px'},300);
     },
     start: function() {
-      var self = this;
-
-      $(window).scroll(function(event) {
-        if (self.on) {
-          var st = $(this).scrollTop();
-          if (st > self.lastScrollTop) {
-            if (self.status !== 'DOWN') {
-              self.status = 'DOWN';
-              self.hide();
-            }
-          } else {
-            if (self.status !== 'UP') {
-              self.status = 'UP';
-              self.show();
-            }
-          }
-          self.lastScrollTop = st;
-        }
-      });
+      var self = this,
+      is_touch_device = false;
       
+      if (('ontouchstart' in window)
+      || (navigator.MaxTouchPoints > 0)
+      || (navigator.msMaxTouchPoints > 0)){
+        is_touch_device = true;
+      }
+
+      if (is_touch_device){
+                
+        var m1=-1, m2=-1;
+         
+        document.body.addEventListener('touchstart', function(e){
+          self.x = e.changedTouches[0].pageY;
+          clearTimeout(m1);
+          clearTimeout(m2);          
+         }, false);
+
+        document.body.addEventListener('touchmove', function(e){
+          if (self.x !== -1 && self.on === true){
+              var dist = e.changedTouches[0].pageY - self.x;                        
+              if (Math.abs(dist)>20){
+                 if (dist > 0){
+                    self.x = -1;
+                    m1 = setTimeout(function(){self.show();},10);                                                   
+                 } else {
+                    self.x = -1;
+                    m2 = setTimeout(function(){self.hide();},10);
+                 }
+              }
+          }
+        }, false);
+      } else {
+        $(window).scroll(function(event) {
+            if (self.on) {
+                var st = $(this).scrollTop();
+                if (st > self.lastScrollTop) {
+                    if (self.status !== 'DOWN') {
+                        self.status = 'DOWN';
+                        self.hide();
+                    }
+                } else {
+                    if (self.status !== 'UP') {
+                        self.status = 'UP';
+                        self.show();
+                    }
+                }
+                self.lastScrollTop = st;
+            }
+        });   
+      }
     }
   }
 };
