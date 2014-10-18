@@ -11,7 +11,7 @@ body {
         .left-drawer,
         .right-drawer,
         .content-drawer {
-          @include transition-property(translate3d);
+          @include transition-property(transform);
           @include transition-duration($speed);
           @include transition-timing-function($easing);
         }
@@ -40,6 +40,7 @@ body {
 
           &.show {
             display: block;
+            position: fixed;
           }
 
         }
@@ -49,7 +50,6 @@ body {
           overflow: hidden;
           width: 100%;
           height: 100%;
-          position: fixed;
 
           .content-drawer {
             overflow: hidden;

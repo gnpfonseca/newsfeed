@@ -30,6 +30,11 @@
 
     &:first-child {
         border-left: shade($button-background-color, 15%);
+        border-right: none;
+    }
+
+    &:last-child {
+        border-left: none;
     }
 
     &[disabled]{
