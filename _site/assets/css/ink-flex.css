@@ -7576,22 +7576,22 @@ img {
 }
 .ink-button.black {
   color: white;
-  background: #1a1a1a;
-  border: 1px solid #161616;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.83);
 }
 .ink-button.black:hover, .ink-button.black:active {
-  background: #0d0d0d;
-  border: 1px solid #090909;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.83);
   color: white;
   text-decoration: none;
 }
 .ink-button.black:focus {
-  background: #0d0d0d;
+  background: rgba(0, 0, 0, 0.8);
 }
 .ink-button.black[disabled] {
-  background: rgba(26, 26, 26, 0.6);
-  border: 1px solid rgba(26, 26, 26, 0);
-  color: black;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.8);
 }
 .ink-button.black[disabled]:hover {
   -webkit-box-shadow: none;

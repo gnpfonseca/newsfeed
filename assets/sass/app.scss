@@ -94,6 +94,25 @@ body {
     }
 }
 
+.date {
+    position: fixed;
+    top: 4em;
+    left: 2em;
+    z-index: $layer-10;
+    @include box-shadow(0 0 2px rgba(0,0,0,.6));
+
+    .ink-button {
+        margin: 0;
+        color: #f0f0f0;
+        @include transition(compact(all 140ms ease-in-out));
+        
+        &:hover,
+        &:focus { 
+            background: rgba(0,0,0,0.9); 
+        }
+    }
+}
+
 .left-drawer {
 	background: $grey-85; 
     .items {
@@ -214,6 +233,7 @@ body {
             line-height: 38px;
         }
     }
+    .date { left: 1.5em; }
 }
 /* for small screens */
 @media screen and (min-width: 321px) and (max-width: 640px) {
@@ -225,6 +245,7 @@ body {
             line-height: 38px;
         }
     }
+    .date { left: 1.25em; }
 }
 /* for tiny screens */
 @media screen and (max-width: 320px) {
@@ -236,4 +257,5 @@ body {
             line-height: 38px;
         }
     }
+    .date { left: 1em; }
 }
