@@ -4,7 +4,7 @@ email: your-email@domain.com
 url: "http://localhost:4000/"
 description: "stuffs about things"
 
-exclude: ['Gruntfile.js','sass','package.json','README','.gitignore','node_modules']
+exclude: ['Gruntfile.js','assets/sass','package.json','README','.gitignore','node_modules']
 
 css: ['assets/css/app.min.css','https://atualida.de/assets/css/font-awesome.min.css']
 js: ['https://atualida.de/assets/js/libs.js','assets/js/app.js']
