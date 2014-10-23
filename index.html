@@ -43,9 +43,12 @@ title: Newsfeed
 -->
 <div class="ink-grid content-drawer">
     <div class="button-group date">
-        <button class="ink-button black"><span class="fa fa-angle-double-left fa-lg"></span></button>
-        <button class="ink-button black">11 Out</button>
-        <button class="ink-button black"><span class="fa fa-angle-double-right fa-lg"></span></button>
+        <button id="triggerbackintimeprev" class="ink-button black"><span class="fa fa-angle-double-left fa-lg"></span></button>
+        <button id="triggerbackintime" class="ink-button black">Hoje</button>
+        <button id="triggerbackintimenext" class="ink-button black"><span class="fa fa-angle-double-right fa-lg"></span></button>
+        <form action="#" method="GET" accept-charset="UTF-8" id="backintime" name="backintimeform">
+           <input type="date" name="data" id="backintimedata" class="ink-button black">           
+        </form>
     </div>
     <div id="mainwrapper" class="column-group gutters"></div>
 </div>
