@@ -645,13 +645,19 @@ var news = {
               $('#backintimedata').data('date',d);
               $('#triggerbackintime').html(news.tradDay(d));              
   },
+  backInTimeTT : null,  
   backInTime : function(){ 
             news.nowDay();
             
             $('#backintimedata').bind('change',function(){
                 var d = $('#backintimedata').val();
                 $('#backintimedata').data('date',d);
-                $('#triggerbackintime').html(news.tradDay(d));
+                $('#triggerbackintime').html(news.tradDay(d));                
+                news.date = d;
+                clearTimeout(news.backInTimeTT);
+                news.backInTimeTT = setTimeout(function(){                  
+                  news.updateMaxId();
+                },1300);
             });
 
             $('#triggerbackintimenext').click(function(){
@@ -659,6 +665,11 @@ var news = {
                 d = news.nextDay(d);
                 $('#backintimedata').data('date',d);
                 $('#triggerbackintime').html(news.tradDay(d));
+                news.date = d;
+                clearTimeout(news.backInTimeTT);
+                news.backInTimeTT = setTimeout(function(){                  
+                  news.updateMaxId();
+                },1300);
             });
 
             $('#triggerbackintimeprev').click(function(){
@@ -666,6 +677,11 @@ var news = {
                 d = news.prevDay(d);
                 $('#backintimedata').data('date',d);
                 $('#triggerbackintime').html(news.tradDay(d));
+                news.date = d;
+                clearTimeout(news.backInTimeTT);
+                news.backInTimeTT = setTimeout(function(){                  
+                  news.updateMaxId();
+                },1300);
             });
   },
   navAnimate: {
