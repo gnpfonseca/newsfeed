@@ -643,7 +643,7 @@ var news = {
               var date = new Date();
               var d = date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
               $('#backintimedata').data('date',d);
-              $('#triggerbackintime').html(tradDay(d));              
+              $('#triggerbackintime').html(news.tradDay(d));              
   },
   navAnimate: {
     selector: '.topbar',
