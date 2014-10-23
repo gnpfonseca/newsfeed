@@ -622,6 +622,29 @@ var news = {
     }
     return true;
   },
+  nextDay : function (d){
+              var date = new Date();
+              var p = d.split('-');
+              date.setFullYear(p[0], p[1]-1, parseInt(p[2])+1);
+              return date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  },
+  prevDay : function (d){
+              var date = new Date();
+              var p = d.split('-');
+              date.setFullYear(p[0], p[1]-1, parseInt(p[2])-1);
+              return date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  },
+  tradDay : function(d){
+              var t = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+              var p = String(d).split('-');              
+              return t[parseInt(p[1])-1] + ' ' + parseInt(p[2]);
+  },
+  nowDay : function(){
+              var date = new Date();
+              var d = date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
+              $('#backintimedata').data('date',d);
+              $('#triggerbackintime').html(tradDay(d));              
+  },
   navAnimate: {
     selector: '.topbar',
     lastScrollTop: 0,
