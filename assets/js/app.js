@@ -645,6 +645,29 @@ var news = {
               $('#backintimedata').data('date',d);
               $('#triggerbackintime').html(news.tradDay(d));              
   },
+  backInTime : function(){ 
+            news.nowDay();
+            
+            $('#backintimedata').bind('change',function(){
+                var d = $('#backintimedata').val();
+                $('#backintimedata').data('date',d);
+                $('#triggerbackintime').html(news.tradDay(d));
+            });
+
+            $('#triggerbackintimenext').click(function(){
+                var d = $('#backintimedata').data('date');
+                d = news.nextDay(d);
+                $('#backintimedata').data('date',d);
+                $('#triggerbackintime').html(news.tradDay(d));
+            });
+
+            $('#triggerbackintimeprev').click(function(){
+                var d = $('#backintimedata').data('date');
+                d = news.prevDay(d);
+                $('#backintimedata').data('date',d);
+                $('#triggerbackintime').html(news.tradDay(d));
+            });
+  },
   navAnimate: {
     selector: '.topbar',
     lastScrollTop: 0,
@@ -721,8 +744,11 @@ jQuery(document).ready(function(e) {
   news.start();
   news.infiniteScrollStart(e);
   news.enableDrawer(e);
+  news.backInTime();
+  /*
   e("#data").blur(function() {
     news.date = e(this).val();
     news.updateMaxId();
   }).attr({value: "2014-01-01"});
+  */
 });
