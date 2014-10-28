@@ -693,15 +693,15 @@ var news = {
     show: function() {
       $(this.selector).stop().animate({marginTop: '0px'}, 300);
       setTimeout(function(){
-        $('#dateWidget').fadeOut(300);
-        news.log('dateWidget off');
+        $('#dateWidget').fadeIn(300);
+        news.log('dateWidget on');
       },300);
     },
     hide: function() {
       $(this.selector).stop().animate({marginTop: '-45px'},300);
       setTimeout(function(){
-        $('#dateWidget').fadeIn(300);
-        news.log('dateWidget on');
+        $('#dateWidget').fadeOut(300);
+        news.log('dateWidget off');
       },300);
     },
     start: function() {
