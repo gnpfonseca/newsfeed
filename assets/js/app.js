@@ -692,9 +692,15 @@ var news = {
     x : -1,
     show: function() {
       $(this.selector).stop().animate({marginTop: '0px'}, 300);
+      setTimeout(function(){
+        $('.button-group .date').fadeOut(300);
+      },300);
     },
     hide: function() {
       $(this.selector).stop().animate({marginTop: '-45px'},300);
+      setTimeout(function(){
+        $('.button-group .date').fadeIn(300);
+      },300);
     },
     start: function() {
       var self = this,
