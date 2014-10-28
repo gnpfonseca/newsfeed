@@ -693,16 +693,16 @@ var news = {
     show: function() {
       $(this.selector).stop().animate({marginTop: '0px'}, 300);
       setTimeout(function(){
-        $('#dateWidget').fadeIn(200);
+        $('#dateWidget').fadeIn(300);
         news.log('dateWidget on');
-      },300);
+      },150);
     },
     hide: function() {
       $(this.selector).stop().animate({marginTop: '-45px'},300);
       setTimeout(function(){
-        $('#dateWidget').fadeOut(200);
+        $('#dateWidget').fadeOut(300);
         news.log('dateWidget off');
-      },300);
+      },150);
     },
     start: function() {
       var self = this,
