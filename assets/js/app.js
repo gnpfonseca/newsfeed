@@ -2,7 +2,7 @@
  * News Object 
  */
 var news = {
-  host: "https://actualida.de/api",
+  host: "https://actualida.de",
   source: "db",
   n: 9,
   date: "",
@@ -54,8 +54,8 @@ var news = {
         async: true,
         global: false,
         timeout: 5e3,
-        url: news.host + "/",
-        data: {action: 'iLike', src: e, token: encodeURIComponent(news.token)},
+        url: news.host + "/api/like",
+        data: {src: e, token: encodeURIComponent(news.token)},
         success: function(e) {
           if (e !== undefined) {
             if (e.status === "ok") {
@@ -100,8 +100,8 @@ var news = {
         async: true,
         global: false,
         timeout: 5e3,
-        url: news.host + "/",
-        data: {action: 'iHate', src: e, token: encodeURIComponent(news.token)},
+        url: news.host + "/api/hate",
+        data: {src: e, token: encodeURIComponent(news.token)},
         success: function(e) {
 
           if (e !== undefined) {
@@ -147,8 +147,8 @@ var news = {
       type: "POST",
       dataType: "json",
       async: false,
-      url: news.host + "/",
-      data: {action: 'getArticlesList',
+      url: news.host + "/api/articles",
+      data: {
         url: encodeURIComponent(news.source),
         offset: encodeURIComponent(news.offset),
         limit: encodeURIComponent(news.limit),
@@ -431,14 +431,14 @@ var news = {
     news.log("displayElement count value " + news.c);
 
     if (news.token !== false) {
-      postData = {action: 'getArticle', url: e, width: news.img_width, height: news.img_height, token: news.token, p: '__P__'};
+      postData = {url: e, width: news.img_width, height: news.img_height, token: news.token, p: '__P__'};
     }
 
     $.ajax({
       type: "GET",
       dataType: "json",
       global: false,
-      url: news.host + "/",
+      url: news.host + "/api/article",
       data: postData,
       cache: true,
       timeout: 5e3,
@@ -468,8 +468,8 @@ var news = {
       async: false,
       global: false,
       timeout: 1e4,
-      url: news.host + "/",
-      data: {action: 'getToken', username: encodeURIComponent(t), password: encodeURIComponent(n)},
+      url: news.host + "/api/token",
+      data: {username: encodeURIComponent(t), password: encodeURIComponent(n)},
       success: function(t) {
         if (t !== undefined) {
           if (t.status === "ok") {
@@ -520,8 +520,8 @@ var news = {
       type: "POST",
       dataType: "json",
       global: false,
-      url: news.host + "/",
-      data: {action: 'getMaxID', date: encodeURIComponent(news.date)},
+      url: news.host + "/api/max",
+      data: {date: encodeURIComponent(news.date)},
       timeout: 5e3,
       success: function(e) {
         if (e !== undefined) {
