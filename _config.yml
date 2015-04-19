@@ -2,7 +2,7 @@
 title: Actualidade
 email: your-email@domain.com
 url: "http://localhost:4000/"
-description: "stuffs about things"
+description: "Actualida.de é uma lista de notícias em língua portuguesa, actualizadado automáticamente."
 
 exclude: ['Gruntfile.js','assets/sass','package.json','README','.gitignore','node_modules']
 
