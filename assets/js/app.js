@@ -427,7 +427,7 @@ var news = {
     var postData, e = news.list.shift();
     news.log("displayElement display :" + e);
 
-    postData = {action: 'getArticle', url: e, width: news.img_width, height: news.img_height};
+    postData = {url: e, width: news.img_width, height: news.img_height};
     news.log("displayElement count value " + news.c);
 
     if (news.token !== false) {
