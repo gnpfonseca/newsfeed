@@ -6,8 +6,8 @@ description: "Actualida.de é uma lista de notícias em língua portuguesa, actu
 
 exclude: ['Gruntfile.js','assets/sass','package.json','README','.gitignore','node_modules']
 
-css: ['assets/css/app.min.css','https://atualida.de/assets/css/font-awesome.min.css']
-js: ['https://atualida.de/assets/js/libs.js','assets/js/app.js']
+css: ['https://atualida.de/assets/css/app.min.css','https://atualida.de/assets/css/font-awesome.min.css']
+js: ['https://atualida.de/assets/js/libs.js','https://atualida.de/assets/js/app.js']
 img: []
 
 
