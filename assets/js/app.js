@@ -5,6 +5,7 @@ var news = {
   host: "https://actualida.de",
   source: "db",
   n: 9,
+  timeout : 10000,
   date: "",
   offset: 0,
   limit: 20,
@@ -53,7 +54,7 @@ var news = {
         dataType: "json",
         async: true,
         global: false,
-        timeout: 5e3,
+        timeout: news.timeout,
         url: news.host + "/api/like",
         data: {src: e, token: encodeURIComponent(news.token)},
         success: function(e) {
@@ -99,7 +100,7 @@ var news = {
         dataType: "json",
         async: true,
         global: false,
-        timeout: 5e3,
+        timeout: news.timeout,
         url: news.host + "/api/hate",
         data: {src: e, token: encodeURIComponent(news.token)},
         success: function(e) {
@@ -148,6 +149,7 @@ var news = {
       dataType: "json",
       async: false,
       url: news.host + "/api/articles",
+      timeout: news.timeout,
       data: {
         url: encodeURIComponent(news.source),
         offset: encodeURIComponent(news.offset),
@@ -441,7 +443,7 @@ var news = {
       url: news.host + "/api/article",
       data: postData,
       cache: true,
-      timeout: 5e3,
+      timeout: news.timeout,
       success: function(t) {
         news.displayElementAjaxDispatchSuccess(t, e);
       },
@@ -467,7 +469,7 @@ var news = {
       dataType: "json",
       async: false,
       global: false,
-      timeout: 1e4,
+      timeout: news.timeout,
       url: news.host + "/api/token",
       data: {username: encodeURIComponent(t), password: encodeURIComponent(n)},
       success: function(t) {
@@ -522,7 +524,7 @@ var news = {
       global: false,
       url: news.host + "/api/max",
       data: {date: encodeURIComponent(news.date)},
-      timeout: 5e3,
+      timeout: news.timeout,
       success: function(e) {
         if (e !== undefined) {
           if (e.status === "ok") {
