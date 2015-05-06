@@ -194,7 +194,14 @@ body {
             }
         }
     }
+    
+    .image_box {
+        max-height: 268px;
+        overflow: hidden;
+    }
 }
+
+
 
 /* for xlarge screens */
 @media screen and (min-width: 1261px) {
