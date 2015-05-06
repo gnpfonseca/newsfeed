@@ -9983,6 +9983,10 @@ body {
 .box img {
   width: 100%;
 }
+.box .image_box {
+  max-height: 268px;
+  overflow: hidden;
+}
 .box a.origin {
   display: block;
   font-weight: 400;
