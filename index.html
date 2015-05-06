@@ -6,8 +6,9 @@ title: Newsfeed
 <script type="text/plain" id="t1">
     <div class="all-33 medium-100 small-100 tiny-100 ink-flex">
         <div class="box">
-            
-            <a href="" class="all-100" rel="noreferrer" target="_blank" ><img src=""></a>
+            <div class="image_box">
+                <a href="" class="all-100" rel="noreferrer" target="_blank" ><img src=""></a>
+            </div>
             <div class="caption full-caption padding">
                 <h1 class="slab fw-500"></h1>
                 <a class="origin" href=""><img class="icon" src="https://atualida.de/16x16.png"></a>
@@ -42,6 +43,14 @@ title: Newsfeed
 </div>
 -->
 <div class="ink-grid content-drawer">
+    <div id="dateWidget" class="button-group date">
+        <button id="triggerbackintimeprev" class="ink-button black"><span class="fa fa-angle-double-left fa-lg"></span></button>
+        <button id="triggerbackintime" class="ink-button black">Hoje</button>
+        <button id="triggerbackintimenext" class="ink-button black"><span class="fa fa-angle-double-right fa-lg"></span></button>
+        <form action="#" method="GET" accept-charset="UTF-8" id="backintime" name="backintimeform">
+           <input type="date" name="data" id="backintimedata" class="ink-button black">           
+        </form>
+    </div>
     <div id="mainwrapper" class="column-group gutters"></div>
 </div>
 

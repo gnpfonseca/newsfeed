@@ -32,7 +32,7 @@
     &.green     { @include ink-button($green, $white); }
     &.orange    { @include ink-button($orange, $white); }
     &.red       { @include ink-button($red, $white); }
-    &.black     { @include ink-button($grey-90, $white); }
+    &.black     { @include ink-button(rgba(0,0,0,.8), $white); }
     &.white     { @include ink-button($white, $text-color); }
   
 }

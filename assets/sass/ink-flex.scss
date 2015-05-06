@@ -7,7 +7,7 @@
  * @author    Sapo Ink Team
  * @license   http://opensource.org/licenses/MIT MIT
  * @link      http://ink.sapo.pt
- * @version   3.0.5
+ * @version   3.1.1
  */
 
 // Import Compass Core
@@ -41,7 +41,7 @@
 @import "mixins/forms";
 @import "mixins/nav.pills";
 @import "mixins/nav.breadcrumbs";
-@import "mixins/nav.pagination"; 
+@import "mixins/nav.pagination";
 @import "mixins/nav.menu";
 @import "mixins/nav.dropdown";
 @import "mixins/themeing";
@@ -63,6 +63,7 @@
 @import "modules/nav.pagination";
 @import "modules/nav.pills";
 @import "modules/nav.menu";
+@import "modules/print";
 @import "modules/tables";
 @import "modules/typography";
 @import "modules/images";

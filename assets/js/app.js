@@ -2,9 +2,10 @@
  * News Object 
  */
 var news = {
-  host: "https://actualida.de/api",
+  host: "https://actualida.de",
   source: "db",
   n: 9,
+  timeout : 10000,
   date: "",
   offset: 0,
   limit: 20,
@@ -15,7 +16,7 @@ var news = {
   username: "",
   password: "",
   active_requests: 0,
-  max_requests: 6,
+  max_requests: 3,
   c: 0,
   token: false,
   swipelock: false,
@@ -53,9 +54,9 @@ var news = {
         dataType: "json",
         async: true,
         global: false,
-        timeout: 5e3,
-        url: news.host + "/",
-        data: {action: 'iLike', src: e, token: encodeURIComponent(news.token)},
+        timeout: news.timeout,
+        url: news.host + "/api/like",
+        data: {src: e, token: encodeURIComponent(news.token)},
         success: function(e) {
           if (e !== undefined) {
             if (e.status === "ok") {
@@ -99,9 +100,9 @@ var news = {
         dataType: "json",
         async: true,
         global: false,
-        timeout: 5e3,
-        url: news.host + "/",
-        data: {action: 'iHate', src: e, token: encodeURIComponent(news.token)},
+        timeout: news.timeout,
+        url: news.host + "/api/hate",
+        data: {src: e, token: encodeURIComponent(news.token)},
         success: function(e) {
 
           if (e !== undefined) {
@@ -147,8 +148,9 @@ var news = {
       type: "POST",
       dataType: "json",
       async: false,
-      url: news.host + "/",
-      data: {action: 'getArticlesList',
+      url: news.host + "/api/articles",
+      timeout: news.timeout,
+      data: {
         url: encodeURIComponent(news.source),
         offset: encodeURIComponent(news.offset),
         limit: encodeURIComponent(news.limit),
@@ -427,21 +429,21 @@ var news = {
     var postData, e = news.list.shift();
     news.log("displayElement display :" + e);
 
-    postData = {action: 'getArticle', url: e, width: news.img_width, height: news.img_height};
+    postData = {url: e, width: news.img_width, height: news.img_height};
     news.log("displayElement count value " + news.c);
 
     if (news.token !== false) {
-      postData = {action: 'getArticle', url: e, width: news.img_width, height: news.img_height, token: news.token, p: '__P__'};
+      postData = {url: e, width: news.img_width, height: news.img_height, token: news.token, p: '__P__'};
     }
 
     $.ajax({
       type: "GET",
       dataType: "json",
       global: false,
-      url: news.host + "/",
+      url: news.host + "/api/article",
       data: postData,
       cache: true,
-      timeout: 5e3,
+      timeout: news.timeout,
       success: function(t) {
         news.displayElementAjaxDispatchSuccess(t, e);
       },
@@ -467,9 +469,9 @@ var news = {
       dataType: "json",
       async: false,
       global: false,
-      timeout: 1e4,
-      url: news.host + "/",
-      data: {action: 'getToken', username: encodeURIComponent(t), password: encodeURIComponent(n)},
+      timeout: news.timeout,
+      url: news.host + "/api/token",
+      data: {username: encodeURIComponent(t), password: encodeURIComponent(n)},
       success: function(t) {
         if (t !== undefined) {
           if (t.status === "ok") {
@@ -520,9 +522,9 @@ var news = {
       type: "POST",
       dataType: "json",
       global: false,
-      url: news.host + "/",
-      data: {action: 'getMaxID', date: encodeURIComponent(news.date)},
-      timeout: 5e3,
+      url: news.host + "/api/max",
+      data: {date: encodeURIComponent(news.date)},
+      timeout: news.timeout,
       success: function(e) {
         if (e !== undefined) {
           if (e.status === "ok") {
@@ -622,6 +624,68 @@ var news = {
     }
     return true;
   },
+  nextDay : function (d){
+              var date = new Date();
+              var p = d.split('-');
+              date.setFullYear(p[0], p[1]-1, parseInt(p[2])+1);
+              return date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  },
+  prevDay : function (d){
+              var date = new Date();
+              var p = d.split('-');
+              date.setFullYear(p[0], p[1]-1, parseInt(p[2])-1);
+              return date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  },
+  tradDay : function(d){
+              var t = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+              var p = String(d).split('-');              
+              return t[parseInt(p[1])-1] + ' ' + parseInt(p[2]);
+  },
+  nowDay : function(){
+              var date = new Date();
+              var d = date.getFullYear()+ '-' + (date.getMonth() + 1) + '-' + date.getDate();
+              $('#backintimedata').data('date',d);
+              $('#triggerbackintime').html(news.tradDay(d));              
+  },
+  backInTimeTT : null,  
+  backInTime : function(){ 
+            news.nowDay();
+            
+            $('#backintimedata').bind('change',function(){
+                var d = $('#backintimedata').val();
+                $('#backintimedata').data('date',d);
+                $('#triggerbackintime').html(news.tradDay(d));                
+                news.date = d;
+                clearTimeout(news.backInTimeTT);
+                news.backInTimeTT = setTimeout(function(){                  
+                  news.updateMaxId();
+                },1300);
+            });
+
+            $('#triggerbackintimenext').click(function(){
+                var d = $('#backintimedata').data('date');
+                d = news.nextDay(d);
+                $('#backintimedata').data('date',d);
+                $('#triggerbackintime').html(news.tradDay(d));
+                news.date = d;
+                clearTimeout(news.backInTimeTT);
+                news.backInTimeTT = setTimeout(function(){                  
+                  news.updateMaxId();
+                },1300);
+            });
+
+            $('#triggerbackintimeprev').click(function(){
+                var d = $('#backintimedata').data('date');
+                d = news.prevDay(d);
+                $('#backintimedata').data('date',d);
+                $('#triggerbackintime').html(news.tradDay(d));
+                news.date = d;
+                clearTimeout(news.backInTimeTT);
+                news.backInTimeTT = setTimeout(function(){                  
+                  news.updateMaxId();
+                },1300);
+            });
+  },
   navAnimate: {
     selector: '.topbar',
     lastScrollTop: 0,
@@ -630,9 +694,17 @@ var news = {
     x : -1,
     show: function() {
       $(this.selector).stop().animate({marginTop: '0px'}, 300);
+      setTimeout(function(){
+        $('#dateWidget').fadeIn(300);
+        news.log('dateWidget on');
+      },150);
     },
     hide: function() {
       $(this.selector).stop().animate({marginTop: '-45px'},300);
+      setTimeout(function(){
+        $('#dateWidget').fadeOut(300);
+        news.log('dateWidget off');
+      },150);
     },
     start: function() {
       var self = this,
@@ -698,8 +770,11 @@ jQuery(document).ready(function(e) {
   news.start();
   news.infiniteScrollStart(e);
   news.enableDrawer(e);
+  news.backInTime();
+  /*
   e("#data").blur(function() {
     news.date = e(this).val();
     news.updateMaxId();
   }).attr({value: "2014-01-01"});
+  */
 });
