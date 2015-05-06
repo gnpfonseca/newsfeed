@@ -9983,10 +9983,6 @@ body {
 .box img {
   width: 100%;
 }
-.box .image_box {
-  max-height: 268px;
-  overflow: hidden;
-}
 .box a.origin {
   display: block;
   font-weight: 400;
@@ -10023,7 +10019,8 @@ body {
 .box .toolbar button.hate {
   color: red;
 }
-.box .image_box {
+.box .img-placeholder {
+  display: block;
   max-height: 268px;
   overflow: hidden;
 }
