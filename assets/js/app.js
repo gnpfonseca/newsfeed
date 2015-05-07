@@ -451,7 +451,7 @@ var news = {
         news.displayElementAjaxDispatchError();
       }
     });
-
+   return true;
   },
   log: function(m) {
     if ("undefined" !== typeof console) {
