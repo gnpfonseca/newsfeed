@@ -16,7 +16,7 @@ var news = {
   username: "",
   password: "",
   active_requests: 0,
-  max_requests: 3,
+  max_requests: 6,
   c: 0,
   token: false,
   swipelock: false,
