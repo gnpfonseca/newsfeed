@@ -2,7 +2,7 @@
  * News Object 
  */
 var news = {
-  host: "https://actualida.de",
+  host: "https://atualida.de",
   source: "db",
   n: 9,
   timeout : 10000,
