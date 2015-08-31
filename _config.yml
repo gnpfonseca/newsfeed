@@ -1,8 +1,8 @@
 # Site settings
-title: Actualidade
+title: Atualidade
 email: your-email@domain.com
 url: "http://localhost:4000/"
-description: "Actualida.de é uma lista de notícias em língua portuguesa, actualizadado automáticamente."
+description: "Atualida.de é uma lista de notícias em língua portuguesa, actualizadado automáticamente."
 
 exclude: ['Gruntfile.js','assets/sass','package.json','README','.gitignore','node_modules']
 
